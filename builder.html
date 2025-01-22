@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Garage Door Visualizer</title>
+   <style>
+       .visualizer-container {
+           margin: 20px auto;
+           padding: 20px;
+       }
+
+       .canvas-container {
+           position: relative;
+           margin: 20px 0;
+           border: 1px solid #ccc;
+           max-width: 100%;
+           overflow: hidden;
+       }
+
+       canvas {
+           max-width: 100%;
+           height: auto;
+       }
+       
+       .door-controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+       
+       .door-option:hover {
+           border-color: #ffa500;
+       }
+
+       .door-preview {
+           width: 100%;
+           height: 80px;
+           object-fit: contain;
+           margin-bottom: 5px;
+       }
+
+       .controls {
+           margin: 20px 0;
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           gap: 10px;
+       }
+
+       .control-group {
+        flex: 1;
+        min-width: 200px;
+       }
+
+       select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+       }
+
+       label {
+           display: block;
+           margin-bottom: 5px;
+           font-weight:bold;
+       }
+   </style>
+</head>
+<body>
+   <div class="visualizer-container">
+       <h2>Garage Door Visualizer</h2>
+       
+       <div class="door-controls">
+        <div class="control-group">
+            <input type="file" id="homePhoto" accept="image/*">
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div class="control-group">
+            <label>Door Size:</label>
+            <select id="doorSize">
+                <option value="">Select Size</option>
+                <option value="single">Single (8' x 7')</option>
+                <option value="single-tall">Single Tall (8' x 8')</option>
+                <option value="double">Double (16' x 7')</option>
+                <option value="double-tall">Double Tall (16' x 8')</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label>Door Style:</label>
+            <select id="doorStyle">
+                <option value="">Select Style</option>
+                <option value="traditional">Traditional Raised Panel</option>
+                <option value="carriage">Carriage House</option>
+                <option value="contemporary">Contemporary Flush</option>
+                <option value="modern">Modern Full View</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label>Door Color:</label>
+            <select id="doorColor">
+                <option value="">Select Color</option>
+                <option value="white">White</option>
+                <option value="almond">Almond</option>
+                <option value="sandstone">Sandstone</option>
+                <option value="bronze">Dark Bronze</option>
+                <option value="black">Black</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="visualizer"></canvas>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById('visualizer');
+    const ctx = canvas.getContext('2d');
+    let homeImage = null;
+    
+    // Constants for container size
+    const CONTAINER_WIDTH = Math.min(1000, window.innerWidth - 40);
+
+    // Update the container CSS
+    document.querySelector('.visualizer-container').style.maxWidth = `${CONTAINER_WIDTH}px`;
+
+    // Door image database
+    const doorImages = {
+        traditional: {
+            white: {
+                single: 'doors/traditional-white-single.png',
+                'single-tall': 'doors/traditional-white-single-tall.png',
+                double: 'doors/traditional-white-double.png',
+                'double-tall': 'doors/traditional-white-double-tall.png'
+            },
+            almond: {
+                // similar structure for almond doors
+            },
+            // additional colors...
+        },
+        carriage: {
+            // similar structure for carriage style
+        },
+        // additional styles...
+    };
+
+    function getDoorImage(style, color, size) {
+        if (!style || !color || !size) return null;
+        try {
+            return doorImages[style][color][size];
+        } catch (e) {
+            return null;
+        }
+    }
+
+    // Handle home photo upload
+    document.getElementById('homePhoto').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+            const img = new Image();
+            img.onload = () => {
+                const aspectRatio = img.height / img.width;
+                const newWidth = CONTAINER_WIDTH;
+                const newHeight = CONTAINER_WIDTH * aspectRatio;
+
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+                canvas.style.width = '100%';
+                canvas.style.height = 'auto';
+
+                homeImage = img;
+                redrawCanvas();
+            };
+            img.src = event.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    // Handle door selection changes
+    ['doorStyle', 'doorColor', 'doorSize'].forEach(controlId => {
+        document.getElementById(controlId).addEventListener('change', updateDoor);
+    });
+
+    function updateDoor() {
+        if (!homeImage) return;
+
+        const style = document.getElementById('doorStyle').value;
+        const color = document.getElementById('doorColor').value;
+        const size = document.getElementById('doorSize').value;
+
+        const doorPath = getDoorImage(style, color, size);
+        if (!doorPath) {
+            redrawCanvas();
+            return;
+        }
+
+        const door = new Image();
+        door.onload = () => {
+            redrawCanvas(door);
+        };
+        door.src = doorPath;
+    }
+
+    function redrawCanvas(doorImage = null) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(homeImage, 0, 0, canvas.width, canvas.height);
+
+        if (doorImage) {
+            const doorWidth = canvas.width * 0.4;
+            const doorHeight = (doorWidth * doorImage.height) / doorImage.width;
+            const x = (canvas.width - doorWidth) / 2;
+            const y = canvas.height * 0.4;
+            
+            ctx.drawImage(doorImage, x, y, doorWidth, doorHeight);
+        }
+    }
+
+    // Reset button
+    document.getElementById('resetBtn').addEventListener('click', () => {
+        document.getElementById('doorStyle').value = '';
+        document.getElementById('doorColor').value = '';
+        document.getElementById('doorSize').value = '';
+        redrawCanvas();
+    });
+</script>
+</body>
+</html>

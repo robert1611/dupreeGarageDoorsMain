@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Storefront Repair</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            
+        }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
+
+    .text-content,
+    .image-content {
+        flex: 0 1 100%;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+   
+}
+
+        /* Section Styling */
+        .storefront-repair {
+            background-color: #fff;
+            padding: 40px 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .storefront-issues {
+            padding: 4rem 2rem;
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .storefront-repair h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+        .storefront-repair p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .repair-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .repair-type {
+            background-color: #f9f9f9;
+            padding: 20px;
+            flex: 1 1 calc(33.33% - 20px);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .repair-type:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .repair-type h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .repair-type p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #ffa500;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            background-color: #e69500;
+        }
+
+        /*Hero CSS*/
+
+        
+    /* Scoped styles just for this hero section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            min-height: 500px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('glass1.jpg'); /* Add your image file here */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .solutions-list {
+            list-style-type: disc; /* Standard bullet points */
+            padding-left: 40px; /* Aligns bullets with leftmost text */
+            margin-top: 10px; /* Space after heading */
+        }
+
+        .solutions-list h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin: 8px 0; /* Reduced space between items */
+        }
+
+
+
+        h1 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-section ul {
+            list-style-type: disc;
+            padding-left: 40px;
+            margin-top: 10px;
+            line-height: 0.4;
+        }
+
+        .hero.section li h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0;
+            padding: 0;
+            line-height: 0.6;
+
+        }
+
+        li {
+            padding: 0;
+            margin: 0;
+        }
+
+    
+        .intro-container h2:hover,
+        .info-box h3:hover {
+            color: #2563eb;
+            font-size: calc(2rem + 5px); /* For h2 */
+            transition: color 0.3s ease, font-size 0.3s ease;
+        }
+
+/* Need to handle h3 size separately since it starts at a different base size */
+        .info-box h3:hover {
+            font-size: calc(1.5rem + 5px); /* For h3 */
+        }
+
+        .intro-container {
+            max-width: 800px;
+            margin: 0 0 3rem 0;
+            padding-left: 0;
+        }
+
+        .intro-container h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-container p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+
+
+
+.info-card {
+    flex: 1 1 400px;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.info-card ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #555;
+}
+
+.info-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+
+.info-section {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.info-box {
+    flex: 0 1 60%;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-box {
+    flex: 0 1 40%;
+    height: 325px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 3px solid transparent; /* Add transparent border initially */
+    transition: border-color 0.3s ease; /* Smooth transition for border */
+}
+
+
+
+
+.info-box h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-box p {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.info-box ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #555;
+}
+
+.info-box li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+    }
+    
+    .info-card {
+        flex: 1 1 100%;
+    }
+
+    .info-section {
+        flex-direction: column;
+    }
+    
+    .info-box, .image-box {
+        flex: 1 1 100%;
+    }
+    }
+     
+      
+        .content-container h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-container h2 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-button {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;          /* Changed from 100% */
+            max-width: 500px;    /* Reduced from 500px */
+            max-height: 70vh;    /* Reduced from 90vh */
+            overflow-y: auto;
+            position: relative;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }       
+
+    /* Also adjust the padding and spacing */
+        .form-group {
+            margin-bottom: 0.75rem;  /* Reduced from 1rem */
+        }
+
+        .form-group label {
+            margin-bottom: 0.25rem; /* Reduced from 0.5rem */
+        }
+
+        .form-group textarea {
+            min-height: 60px;    /* Reduced from 80px */
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="garage-header">
+        <div class="garage-header__content-left">
+            <div class="garage-header__logo">
+                <a href="index.html">
+                <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img"></a>
+            </div>
+            <div class="garage-header__social">
+                <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
+                    <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
+                    <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
+                    <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
+                    <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
+                </a>
+            </div>
+        </div>
+    
+        <nav class="garage-header__nav">
+            <button class="garage-header__mobile-btn">
+                <span class="garage-header__mobile-btn-bar"></span>
+                <span class="garage-header__mobile-btn-bar"></span>
+                <span class="garage-header__mobile-btn-bar"></span>
+            </button>
+            <ul class="garage-header__nav-list">
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Residential</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                        <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                        <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                        <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Commercial</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                        <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                        <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Areas Served</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Houston</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Katy</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Pearland</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item garage-header__phone">
+                    <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+ <!--HERO SECTION-->
+ <section class="hero-section">
+    <div class="hero-image"></div>
+    <div class="new-overlay"></div>   
+    <div class="content-container">
+        
+        <h1>Storefront Solutions</h1>
+        <ul>
+            <li><h2>Door Hinges</h2></li>
+            <li><h2>Door Closers</h2></li>
+            <li><h2>Continuous Hinges</h2></li>
+            <li><h2>Rolling Grilles</h2></li>
+            <li><h2>Gate Openers</h2></li>
+            <li><h2>Pneumatic Doors</h2></li>
+
+        </ul>
+        
+        <button class="book-now-btn" onclick="navigateToBooking()">Contact Us</button>
+    </div>
+    <div class="overlay"></div>
+    <div class="booking-form-section" id="bookingForm">
+        <div class="form-container">
+            <h2>Book Your Appointment</h2>
+            <p>Please fill out the form below and we'll get back to you shortly.</p>
+            <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" enctype="multipart/form-data">
+                <!-- Hidden FormSubmit features -->
+                <input type="hidden" name="_subject" value="New Commercial Door Service Request">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your commercial door service needs.">
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="zipcode">Zip Code</label>
+                    <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code" required>
+                </div>
+                <div class="form-group">
+                    <label for="request">Reason for Request</label>
+                    <textarea id="request" name="request" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Upload Photo (optional)</label>
+                    <input type="file" id="photo" name="attachment" accept="image/*" multiple>
+                    <small>You can select multiple photos if needed</small>
+                </div>
+                <button type="submit" class="submit-btn">Submit Booking</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="storefront-issues">
+    <div class="intro-container">
+        <div class="text-context">
+        <h2>Commercial Storefront & Rolling Grille Repairs</h2>
+        <p>We specialize in repairing hinges, closers, and rolling grilles for commercial storefronts and strip mall locations. 
+        Our team understands the importance of secure and functional entrances for your business. Whether it's a broken hinge, 
+        a misaligned closer, or a malfunctioning rolling grille, we've got you covered.</p>
+        </div>
+    </div>
+
+
+    <!--  Storefront Section -->
+    
+    <div class="info-section">
+        <div class="info-box">
+            <h3>Glass Storefront Doors</h3>
+            <p>Glass storefront doors are the standard entrance for most retail locations, office buildings, and commercial spaces. 
+            These doors create an inviting entrance while providing security and climate control. However, with constant daily use, 
+            their components can develop issues:</p>
+            <ul>
+                <li>Door closers lose proper tension and speed control</li>
+                <li>Hinges become loose and cause door sagging</li>
+                <li>Weather stripping deteriorates</li>
+                <li>Doors stop latching properly</li>
+            
+            </ul>
+        </div>
+        <div class="image-box">
+            <img src="glass2.jpg" alt="Glass Storefront Door">
+        </div>
+    </div>
+
+    <!-- Rolling Grilles Section -->
+    <div class="info-section">
+        <div class="info-box">
+            <h3>Rolling Grilles</h3>
+            <p>Rolling grilles provide essential security for retail spaces while maintaining visibility and airflow. These systems 
+            can experience several issues over time.</p>
+            <ul>
+                <li>Track misalignment causing binding</li>
+                <li>Failure of the torsion spring</li>
+                <li>Spring tension problems</li>
+                <li>Damaged or bent slats</li>
+               
+            </ul>
+        </div>
+        <div class="image-box">
+            <img src="rolling.jpg" alt="Rolling Grille repair">
+        </div>
+    </div>
+
+    <!-- Commercial Opener -->
+    <div class="info-section">
+        <div class="info-box">
+            <h3>Commercial Garage Door Openers</h3>
+            <p> The electronic opener has a motor that powers the door up and down. The two types of machines are jackshaft openers which mount on the side and rolls the grille up or gearhead operners that used a chain or belt to drive the barrel assembly.</p>
+            <ul>
+                <li>Opening and closing limits has get thrown off and sometimes need to be reset</li>
+                <li>Safety sensors can fail or become misaligned.</li>
+                <li>Auto-reverse mechnism can fail, risking bodily damage and preventing closing</li>
+                <li>Lock mechanism failures</li>
+            </ul>
+        </div>
+        <div class="image-box">
+            <img src="comm_open.jpg" alt="Jackshaft opener repair near me">
+        </div>
+    </div>
+    
+</section>
+
+<div id="footer-placeholder"></div>
+</body>
+</html>
+

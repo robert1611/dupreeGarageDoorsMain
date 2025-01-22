@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty Information - EZ Lift Garage Doors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding-top: 74px;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: #ffa500;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo img {
+            height: 50px;
+            display: block;
+        }
+
+        /* Navigation Styles */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            background-color: #fff;
+            min-width: 220px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 0.5rem 0;
+            z-index: 1001;
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu a {
+            color: #333;
+            padding: 0.5rem 1rem;
+            display: block;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Phone Style */
+        .nav-item.phone {
+            margin-left: 1rem;
+        }
+
+        /* Remove any possible list styling */
+        .nav-menu ul,
+        .nav-menu li,
+        .dropdown-menu,
+        .dropdown-menu li {
+            list-style: none;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Warranty Content Styles */
+        .warranty-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .warranty-container h1 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .warranty-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        .warranty-section h2 {
+            color: #0056b3;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .warranty-section h3 {
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .warranty-section p {
+            margin: 10px 0;
+        }
+
+        .warranty-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .warranty-section ul li {
+            margin: 5px 0;
+        }
+
+        strong {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo_orange.png" alt="Company Logo">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Residential</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Springs.html">Garage Door Springs</a></li>
+                            <li><a href="door.html">Garage Doors</a></li>
+                            <li><a href="Openers.html">Openers</a></li>
+                            <li><a href="QuietDoor.html">Quiet Door Upgrade</a></li>
+                            <li><a href="build_your_door.html">Design Your Garage Door</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Commercial</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="new_repair.html">Service Work</a></li>
+                            <li><a href="new_install.html">New Installs</a></li>
+                            <li><a href="repairs.html">Hollow Metal Door</a></li>
+                            <li><a href="storefront.jpg">Storefront</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Areas Served</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Houston</a></li>
+                            <li><a href="#">Katy</a></li>
+                            <li><a href="#">Pearland</a></li>
+                            <li><a href="#">Bellaire</a></li>
+                            <li><a href="#">Cypress</a></li>
+                            <li><a href="#">Cinco Ranch</a></li>
+                            <li><a href="#">Sugar Land</a></li>
+                            <li><a href="#">Missouri City</a></li>
+                            <li><a href="#">Memorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="FAQs.html" class="nav-link">FAQs</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="FAQs.html">Should I DIY Broken Springs?</a></li>
+                            <li><a href="FAQs.html">How Do I Maintain My Garage Door?</a></li>
+                            <li><a href="FAQs.html">Expected Life of Garage Door Opener</a></li>
+                            <li><a href="FAQs.html">Why is My Garage Door So Heavy?</a></li>
+                            <li><a href="FAQs.html">How Can I Make My Garage Door Quieter?</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item phone">
+                        <a href="tel:346-493-3487" class="nav-link">Call Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 6 Month Labor Warranty Content -->
+    <div class="warranty-container">
+        <h1>Warranty Information</h1>
+
+        <!-- Section 1: Two Year Parts Six Months Labor Garage Door Warranty -->
+        <section class="warranty-section">
+            <h2>Limited 2 Year Parts and 6 Month Labor Garage Door Opener Warranty</h2>
+            <p><strong>Customer Must Retain Invoice For Warranty</strong></p>
+            <p>This Limited Warranty does not cover Lightning Strikes or Power Surges​</p>
+            <p>This Limited Warranty does not cover issue specific to the Garage Door especially Cables Off, Door Re-positioning, or Doors Off Track​</p>
+            <h3>What Is Covered: Installation of New Garage Door Openers</h3>
+            <ul>
+                <li>Limited Warranty applies to a new Liftmaster garage door opener purchased through Dupree Garage Doors. Warranty covers all parts for a 2 year period</li>
+                <li>Limited Warranty covers defects in workmanship specific to the garage door opener for 6 monrhs.</li>
+            </ul>
+            <p>Warranty Service Available During Normal Business Hours.</p>
+        </section>
+
+        <section class="warranty-section">
+            <h2>Limited Six Month Labor Garage Door Opener Warranty</h2>
+            <p><strong>Customer Must Retain Invoice For Warranty</strong></p>
+            <p>This Limited Warranty does not cover Lightning Strikes or Power Surges​</p>
+            <p>This Limited Warranty does not cover issue specific to the Garage Door especially Cables Off, Door Re-positioning, or Doors Off Track​</p>
+            <p>This Limited Warranty does not cover malfunction of any garage door parts especially logic boards, sensors, remotes, belts, chains.  Please reach out to manufacturer</p>
+            <p>This Limited Warranty does not cover Wifi or connections to the vehicle console</p>
+            <h3>What Is Covered: Installation of New Garage Door Openers</h3>
+            <ul>
+                <li>Limited Warranty applies to labor on a new garage door opener supplied by Dupree Garage Doors</li>
+                <li>Limited Warranty covers defects in workmanship specific to the garage door opener for 6 monrhs.</li>
+                <li></li>
+            </ul>
+            <p>Warranty Service Available During Normal Business Hours.</p>
+        </section>
+
+        <!-- Section 2: Garage Door Warranty -->r
+        <section class="warranty-section">
+            <h2>Limited 5 Year Parts and 6 Month Labor Garage Door Warranty</h2>
+            <p><strong>Customer Must Retain Invoice For Warranty</strong></p>
+            <p>This Limited Warranty does not cover Cables Off, Door Re-positioning, or Doors Off Track​</p>
+            <p>This Limited Warranty does not cover issues caused by existing Garage Door Openers that may have malfunctioned and caused damange to the garage door.</p>
+            <h3>What Is Covered: Installation of New Garage Doors</h3>
+            <ul>
+                <li>Dupree Garage Doors will correct any defective workmanship and/or repair/replace any defective part, at no charge for labor or parts through the first 6 months.</li>
+                <li>After 6 months, Dupree Garage Doors will replace a defective part.  The part will be at no cost, but will entail a service / trip charge.</li>
+                <li>Limited Warranty applies to a new garage door purchased through Dupree Garage Doors</li>
+            </ul>
+            <p>Warranty Service Available During Normal Business Hours.</p>
+        </section>
+
+        <!-- Section 5: Limited Five Year Warranty -->
+        <section class="warranty-section">
+            <h2>Limited Five Year Parts and 6 Month Spring Warranty</h2>
+            <p><strong>Customer Must Retain Invoice For Warranty</strong></p>
+            <p>This Limited Warranty does not cover Cables Off, Door Re-positioning, or Doors Off Track​</p>
+            <h3>What is Covered: Residential Torsion or Extension Springs</h3>
+            <ul>
+                <li>Dupree Garage Doors will correct any defective workmanship and/or repair/replace any defective part, at no charge for labor or parts through the first six months</li>
+                <li>Limited Warranty covers defects in workmanship.</li>
+                <li>Limited Warranty covers defective spring.</li>
+                <li>Limited Warranty covers labor furnished by Dupree Garage Doors as part of the installation of new spring/springs.</li>
+            </ul>
+            <p>Warranty Service Available During Normal Business Hours.</p>
+        </section>
+
+        <!-- Section 6: Warranty Restrictions -->
+        <section class="warranty-section">
+            <h2>Warranty Restrictions</h2>
+            <p>This Limited Warranty is <strong>VOID</strong> if any repairs/replacement are completed by unauthorized parties.</p>
+            <p>The warranty does not cover:</p>
+            <ul>
+                <li>Rust caused by damages or scratching</li>
+                <li>Damage from corrosive chemicals, fumes, or salt environments</li>
+                <li>Damage from negligence or improper use</li>
+                <li>Normal wear or defects in paint/coating</li>
+                <li>Minor expansion and contraction gaps in overlay materials</li>
+                <li>Damage caused by Acts of God</li>
+            </ul>
+        </section>
+    </div>
+
+    
+</body>
+</html>

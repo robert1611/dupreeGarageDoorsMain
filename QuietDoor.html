@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Door Installations</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        
+        /* Header Styling */
+        /* Header Styling */
+        .spring-header {
+            width: 100%;
+            height: 400px;
+            background-image: url('parts.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+            margin-top: 70px;
+        }
+
+        .overlay-text {
+            background-color: rgba(200, 200, 200, 0.7);
+            padding: 10px 40px;
+            border-radius: 5px;
+            margin-top: 150px;
+        }
+
+        .overlay-text h1 {
+            color: #333;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px 10%;
+            background-color: white;
+        }
+
+        .section-with-image {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+            align-items: start;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .text-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .text-content ul li {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .text-content ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ffa500;
+        }
+
+        h2 {
+            color: #333;
+            margin: 30px 0 20px;
+            font-size: 1.8rem;
+        }
+
+        .unique-toggle-btn {
+            position: absolute;
+            left: 50%;
+            top: 70%;
+            width: 15% !important;
+            margin-top: 50px;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+            font-size: 22px !important;
+            background-color: #ffa500;
+            color: white; 
+            
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 2;
+        }
+
+        .unique-toggle-btn:hover {
+            background-color: #2563eb;
+            color: #ffa500;
+                }
+
+        /* Table Styles */
+        .pricing-table {
+            width: 100%;
+            max-width: 400px;
+            margin: 0px 0 20px 0;
+            border-collapse: collapse;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+
+        .pricing-table th {
+            background-color: #ffa500;
+            color: white;
+        }
+
+        .notes-section {
+            max-width: 4000px;
+            margin: 20px auto;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1250px) {
+            .unique-toggle-btn {
+                width: 30% !important;
+            }
+        }
+    
+
+        @media screen and (max-width: 768px) {
+            .spring-header {
+                margin-top: 120px;
+                height: 250px;
+            }
+
+            .overlay-text {
+                margin-top: 100px;
+            }
+
+            .section-with-image {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .text-content, .image-content, .image-content-b {
+                width: 100%;
+                margin-top: 0 !important;
+            }
+
+            .content-section {
+                padding: 20px 10%;
+                background-color: white;
+            }
+
+            .content-section h2 {
+                margin-top: 30px;
+            }
+
+            .text-content ul {
+                margin-bottom: 30px;
+            }
+
+            .pricing-table {
+                font-size: 14px;
+            }
+
+            .service-pricing-header {
+                margin-top: 10px;
+            }
+
+            .pricing-section {
+                padding-top: 0;
+            }
+
+            .no-top-padding {
+                padding-top: 0;
+            }
+
+            .unique-toggle-btn{
+                width: 35% !important;
+            }
+        }
+
+
+        .form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.booking-form-section {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+}
+
+.unique-form-container {
+    position: relative;
+    padding: 20px;
+}
+
+.unique-form-group {
+    margin-bottom: 15px;
+}
+
+.unique-form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.unique-form-group input,
+.unique-form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.unique-submit-btn {
+    background-color: #ffa500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="garage-header">
+        <div class="garage-header__content-left">
+            <div class="garage-header__logo">
+                <a href="index.html">
+                <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img"></a>
+            </div>
+            <div class="garage-header__social">
+                <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
+                    <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
+                    <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
+                    <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
+                    <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
+                </a>
+            </div>
+        </div>
+    
+        <nav class="garage-header__nav">
+            <button class="garage-header__mobile-btn">
+                <span class="garage-header__mobile-btn-bar"></span>
+                <span class="garage-header__mobile-btn-bar"></span>
+                <span class="garage-header__mobile-btn-bar"></span>
+            </button>
+            <ul class="garage-header__nav-list">
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Residential</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                        <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                        <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                        <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Commercial</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                        <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                        <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Areas Served</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Houston</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Katy</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Pearland</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item garage-header__phone">
+                    <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="overlay" id="formOverlay"></div>
+    <div class="booking-form-section" id="bookingForm" style="display: none;">
+        <div class="unique-form-container">
+            <h2>Reach Out To Us</h2>
+            <p>Please fill out the form below and we'll get back to you shortly.</p>
+            <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_subject" value="New Commercial Door Service Request">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your commercial door service needs.">
+                <div class="unique-form-group">
+                    <label for="unique-name">Full Name</label>
+                    <input type="text" id="unique-name" name="name" required>
+                </div>
+                <div class="unique-form-group">
+                    <label for="unique-email">Email Address</label>
+                    <input type="email" id="unique-email" name="email" required>
+                </div>
+                <div class="unique-form-group">
+                    <label for="unique-phone">Phone Number</label>
+                    <input type="tel" id="unique-phone" name="phone" required>
+                </div>
+                <div class="unique-form-group">
+                    <label for="unique-zipcode">Zip Code</label>
+                    <input type="text" id="unique-zipcode" name="zipcode" pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code" required>
+                </div>
+                <div class="unique-form-group">
+                    <label for="unique-request">Reason for Request</label>
+                    <textarea id="unique-request" name="request" rows="3" required></textarea>
+                </div>
+                <div class="unique-form-group">
+                    <label for="unique-photo">Upload Photo (optional)</label>
+                    <input type="file" id="unique-photo" name="attachment" accept="image/*" multiple>
+                    <small>You can select multiple photos if needed</small>
+                </div>
+                <button type="submit" class="unique-submit-btn">Contact Us</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="spring-header">
+        <div class="overlay-text">
+            <h1>Quiet Garage Door</h1>
+        </div>
+        <button onclick="navigateToBooking()" class="unique-toggle-btn">Contact Us</button>
+    </div>
+
+    <div class="content-section">
+
+
+
+        
+    <div class="section-with-image">
+        <!-- Inexpensive Upgrades Section -->
+        <div class="text-content">
+            <h2>Inexpensive Upgrades to Quiet Garage Door</h2>
+            <ul>
+                <li>
+                    <strong>Garage Door Rollers Replacement:</strong> 
+                    Rollers are like the tires on a car. They take a lot of wear and tear, and as a result wear out in 3-10 years depending on usage, material quality and maintenance. We only install nylon rollers with ball bearings, which allow the rollers to operate more smoothly and quietly, and they last much longer than plastic or steel rollers that most new construction comes with.
+                </li>
+                <li>
+                    <strong>Hinge Replacement:</strong>
+                    Hinges take a lot of abuse, especially if the door is out of alignment. Door hinges vary as they go from top to bottom. Hinges between the 3rd and top panel experience the most fatigue and wear out faster. We use thicker 14-gauge hinges because they last longer and are quieter.
+                </li>
+                <li>
+                    <strong>Realignment / Tuneup:</strong>
+                    Foundations and framing shift every couple years and this significantly impacts the operation of your door. Every 3-5 years (and more frequently for detached structures) it's best to reset the cables and spring tension and adjust tracks.
+                </li>
+                <li>
+                    <strong>Regular Lubrication:</strong>
+                    It is best to lubricate your garage door every 6 months. Any metal-to-metal contact is worth addressing. Key areas are the hinges, springs, rollers, and bearing plates.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Moderately Priced Upgrades Section -->
+        <div class="text-content">
+            <h2>Moderately Priced Upgrades to Quiet Garage Door</h2>
+            <ul>
+                <li>
+                    <strong>Garage Door Opener Replacement:</strong>
+                    This is probably the second best thing, after rollers, to quiet down your door. Belt drives are so much smoother and quieter than chain drives or screw drives. Belts are also more durable than chain drives and require less maintenance.
+                </li>
+                <li>
+                    <strong>Spring Replacement:</strong>
+                    Springs can be replaced prior to failure. In their final years, they do not perform as well having lost a lot of their strength. The benefit of proactively changing springs is avoiding the inconvenience of being trapped inside a garage, and the damage a garage door and garage door opener can incur when trying to open the door.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Value-Add Upgrades Section -->
+        <div class="text-content">
+            <h2>Value-Add Upgrades</h2>
+            <ul>
+                <li>
+                    <strong>Weather Sealing:</strong>
+                    You'll always have gaps between the garage door and the frame. A simple solution is replacing the bottom seal and putting vinyl weatherseal along the top and sides of the door. This seals gaps that allow lots of leaves and debris to accumulate in the garage.
+                </li>
+                <li>
+                    <strong>Insulation:</strong>
+                    Insulation can be added to a non-insulated door. This can help with energy costs, is good for the environment, and can dampen the sound of the garage door as it opens and closes.
+                </li>
+                <li>
+                    <strong>Operator Reinforcement Brackets:</strong>
+                    These brackets connect to the center style of the door. This provides a sturdier brace to which the garage door opener attaches. Prevent more expensive repairs down the road by preserving the integrity of the door panel.
+                </li>
+            </ul>
+        </div>
+    </div>
+       <!-- Pricing Table Section -->
+       <h2 class="service-pricing-header">Service Pricing</h2>
+       <table class="pricing-table">
+           <thead>
+               <tr>
+                   <th>Item/Service</th>
+                   <th>Price</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>Rollers</td>
+                   <td>$135</td>
+               </tr>
+               <tr>
+                   <td>End Hinges Only</td>
+                   <td>$150</td>
+               </tr>
+               <tr>
+                   <td>All Hinges</td>
+                   <td>$225</td>
+               </tr>
+               <tr>
+                   <td>Cables</td>
+                   <td>$60</td>
+               </tr>
+               <tr>
+                   <td>Drums</td>
+                   <td>$60</td>
+               </tr>
+               <tr>
+                   <td>Operator Bracket</td>
+                   <td>$75</td>
+               </tr>
+               <tr>
+                   <td>Realignment</td>
+                   <td>$95</td>
+               </tr>
+               <tr>
+                   <td>End Bearing Plates</td>
+                   <td>$60</td>
+               </tr>
+               <tr>
+                   <td>Torsion Shaft 8'</td>
+                   <td>$105</td>
+               </tr>
+               <tr>
+                   <td>Torsion Shaft 16'+</td>
+                   <td>$140</td>
+               </tr>
+               <tr>
+                   <td>Single Spring</td>
+                   <td>$275</td>
+               </tr>
+               <tr>
+                   <td>Pair of Springs</td>
+                   <td>$350+</td>
+               </tr>
+               <tr>
+                   <td>Garage Door Opener</td>
+                   <td>$450+</td>
+               </tr>
+           </tbody>
+       </table>
+       <div class="pricing-notes">
+           <p><strong>Notes:</strong></p>
+           <ol>
+               <li>Prices subject to change</li>
+               <li>Any total items below $200 add $75 service call</li>
+               <li>Service call waived if above $200</li>
+               <li>Any items above $500 (excluding opener and springs) take 20% off</li>
+           </ol>
+       </div>
+   </div>
+
+
+
+
+    </script>
+<div id="footer-placeholder"></div>
+<script src="script.js"></script>
+
+</body>
+</html>

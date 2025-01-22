@@ -1,0 +1,554 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .header {
+    background-color: #ffc107;
+    padding: 10px 0;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .social-icons img {
+    height: 25px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-item {
+    position: relative;
+  }
+  
+  .nav-item.dropdown:nth-child(5) {
+      margin-right: 300px; /*Move FAQs button 300px right */
+    }
+  
+  .nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    display: block;
+    padding: 5px;
+  }
+  
+  .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0; /* Align dropdown to the right of the nav-item */
+      background-color: #f9f9f9;
+      padding: 5px;
+      border: 1px solid #ddd;
+      z-index: 1;
+      min-width: 200px; /* Set a minimum width for dropdown to keep it visible */
+      white-space: nowrap;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+      display: block;
+  }
+  
+  
+  .dropdown-menu li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .phone {
+    margin-left: auto;
+  }
+  
+  .nav-item.phone a {
+    font-weight: 700;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-menu {
+      justify-content: flex-end;
+    }
+  
+    .nav-list {
+      display: none;
+      flex-direction: column;
+      background-color: #f9f9f9;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding-top: 15px;
+    }
+  
+    .nav-item.phone {
+      margin-left: 0;
+    }
+  
+    .nav-list.active {
+      display: flex;
+    }
+  
+    .mobile-menu-btn {
+      display: block;
+    }
+  
+    .header-container {
+      padding: 0 10px;
+    }
+  }
+
+
+       /* Header Styling */
+
+        /* Header styling */
+        .garage-header {
+          width: 100%;
+          position: fixed;
+          height: 80px;
+          background: #ffa500;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+          overflow: visible;
+              /* Add padding instead of absolute positioning */
+      }
+
+      .garage-header__content-left {
+          float: left;
+          width: 50%; /* Take up left half of header */
+          height: 100%;
+          position: relative;
+      }
+
+      .garage-header__logo {
+          position: absolute;
+          left: 40px; /* Adjust this value to position logo */
+          top: 50%;
+          transform: translateY(-50%);
+          padding-top: 10px;
+      }
+
+      .garage-header__logo-img {
+          height: 50px;
+      }
+
+      .garage-header__social {
+          position: absolute;
+          left: 60%; /* Position social icons */
+          top: 50%;
+          transform: translateY(-50%);
+          white-space: nowrap;
+      }
+
+      .garage-header__social-icon {
+          display: inline;
+          height: 30px;
+          margin-right: 15px;
+          vertical-align: middle;
+      }
+
+.garage-header__nav {
+  float: right;
+  margin-right: 60px; /* Add space from right edge */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.garage-header__nav-list {
+  list-style: none;
+  font-weight: 500;
+}
+
+.garage-header__dropdown-link:hover {
+  color: #2563eb;
+  transition: color 0.3s ease;
+}
+
+.garage-header__nav-item {
+  display: inline-block;
+  position: relative;
+  margin-left: 20px;
+  position: relative; /* Positioning context for dropdown */
+}
+
+.garage-header__social a {
+  text-decoration: none; /* Remove underlines on links */
+}
+
+.garage-header__nav-link {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.garage-header__nav-link:hover {
+  color: #333;
+}
+
+/* Desktop dropdown menu */
+@media screen and (min-width: 770px) {
+  .garage-header__dropdown {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      min-width: 200px;
+      text-align: right;
+      z-index: 1000;
+  }
+
+  .garage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+  }
+
+  .garage-header__nav-item:hover .garage-header__dropdown {
+      display: block;    }
+}
+
+.garage-header__dropdown-item {
+  padding: 0px;
+  list-style: none;
+}
+
+.garage-header__dropdown-link {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  font-size: 14px;
+  text-align: center;
+  
+}
+
+.garage-header__content-left {
+  display: flex;           /* Make this a flex container */
+  align-items: center;     /* Center items vertically */
+  gap: 30px;              /* Add space between logo and social icons */
+  flex: 1;                /* Allow it to take up available space */
+}
+
+.garage-header__phone {
+  margin-left: 40px !important;
+}
+
+/* Make sure links are clickable */
+.garage-header__dropdown-link {
+  position: relative;
+  z-index: 10000;
+  cursor: pointer;
+  padding: 10px 20px;
+  display: block;
+}
+
+
+.garage-header__phone .garage-header__nav-link {
+  background-color: #0066cc;  /* Blue background */
+  color: white;              /* White text */
+  padding: 8px 15px;         /* Spacing inside button */
+  border-radius: 5px;        /* Rounded corners */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.garage-header__phone .garage-header__nav-link:hover {
+  background-color: #0052a3;  /* Slightly darker blue on hover */
+  color: #FFA500;
+}
+
+/* Mobile menu button styling */
+.garage-header__mobile-btn {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 100;
+}
+
+.garage-header__mobile-btn-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add this to create a hover buffer */
+.garage-header__dropdown::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 20px;
+}
+
+.garage-header__nav-item.active .garage-header__dropdown {
+      display: block;
+  }
+
+/* Hamburger to X animation */
+.garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(3) {
+  
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .garage-header__logo {
+      position: absolute;
+      left: 20px;
+      margin-left: 0;
+  }
+
+  .garage-header__logo-img {
+      height: 35px;
+  }
+  
+  .garage-header__social {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0;
+  }
+
+  .garage-header__content-left {
+      float: none;
+      width: 100%;
+      height: 80px;         
+  }
+
+  .garage-header__social-icon {
+      height: 20px;
+      margin-right: 10px;
+  }
+
+  .garage-header__social-icon:last-child {
+      margin-right: 0;
+  }
+
+  .garage-header__mobile-btn {
+      display:inline-block;
+      /*display: block !important; /* Force display */
+      position: absolute;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1100; /* Ensure it's above other elements */
+  }
+
+  .garage-header__mobile-btn-bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #000;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .garage-header__nav {
+      position: absolute;
+      right: 80px;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  .garage-header__nav-list {
+      display: none;
+  }
+
+  .garage-header__nav-list.active {
+      display: block;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: #ffa500;
+      padding: 20px;
+      z-index: 999;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+  }
+
+  .garage-header__phone .garage-header__nav-link {
+      display: inline-block;  /* Keep button width to content */
+  }
+
+  .garage-header__nav-item {
+      display: block;
+      margin: 10px 0;
+      text-align: left;
+  }
+
+  .garage-header__dropdown {
+      display: none;
+      position: absolute;
+      right: 43%;  /* Center it relative to parent nav item */
+      top: -105px;
+      transform: translateX(50%);  /* Center it perfectly */
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      min-width: 200px;
+      text-align: center;  /* Center the text */
+      z-index: 9999;
+      pointer-events: all;
+      padding: 10px 0;
+  }
+
+  /* Show dropdown when parent is active (controlled by JS) */
+  
+
+  .garage-header__dropdown-item {
+      padding: 0px;
+      list-style: none;
+  }
+
+  .garage-header__dropdown-link {
+      color: #000;
+      text-decoration: none;
+      display: block;
+      padding: 5px 0;
+      font-size: 16px;  /* Adjusted font size */
+      text-align: center;  /* Ensure text stays centered */
+  }
+
+  .garage-header__dropdown-link:hover {
+      color: #2563eb;
+      transition: color 0.3s ease;
+}
+
+  .garage-header__phone {
+      margin-left: 0;
+      margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .garage-header__social {
+      display: flex; /* Changed from 'none' to maintain visibility */
+      gap: 8px;
+      left: 57%; /* Adjusted from 40% to better center */
+      transform: translate(-50%, -50%);
+  }
+  
+  .garage-header__social-icon {
+      height: 16px; /* Made slightly smaller */
+      margin-right: 0; /* Remove right margin since we're using gap */
+  }
+
+  
+  }
+  
+  .garage-header__logo {
+      margin-left: 0px;
+      display: flex;
+      align-items: center;
+  }
+
+
+/* Active state styling */
+.garage-header__nav-item.active .garage-header__nav-link {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .info-section {
+      flex-direction: column;
+  }
+
+  .text-content,
+  .image-content {
+      flex: 0 1 100%;
+  }
+
+  .advantages-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .mobile-menu-btn {
+      display: block;
+  }
+}

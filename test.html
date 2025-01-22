@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage</title>
+    <link rel="stylesheet" href="styles.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header styling */
+.garage-header {
+    width: 100%;
+    position: fixed;
+    height: 80px;
+    background: #ffa500;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.garage-header__content-left {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.garage-header__logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 140px; /* Changed from 140px */
+}
+
+.garage-header__logo-img {
+    height: 50px;
+}
+
+.garage-header__social {
+    display: inline-block;
+    position: absolute;
+    left: 525px;
+    white-space: nowrap;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.garage-header__social-icon {
+    display: inline;
+    height: 30px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.garage-header__nav {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.garage-header__nav-list {
+    list-style: none;
+    font-weight: 500;
+}
+
+.garage-header__nav-item {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+}
+
+.garage-header__social a {
+    text-decoration: none; /* Remove underlines on links */
+}
+
+.garage-header__nav-link {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.garage-header__nav-link:hover {
+    color: #333;
+}
+
+/* Desktop dropdown menu */
+@media screen and (min-width: 768px) {
+    .garage-header__dropdown {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        min-width: 200px;
+        text-align: right;
+        z-index: 1000;
+    }
+
+    .garage-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .garage-header__nav-item:hover .garage-header__dropdown {
+        display: block;
+    }
+}
+
+.garage-header__dropdown-item {
+    padding: 10px;
+    list-style: none;
+}
+
+.garage-header__dropdown-link {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.garage-header__phone {
+    margin-left: 30px;
+}
+
+.garage-header__phone .garage-header__nav-link {
+    background-color: #0066cc;  /* Blue background */
+    color: white;              /* White text */
+    padding: 8px 15px;         /* Spacing inside button */
+    border-radius: 5px;        /* Rounded corners */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.garage-header__phone .garage-header__nav-link:hover {
+    background-color: #0052a3;  /* Slightly darker blue on hover */
+    color: #FFA500;
+}
+
+/* Mobile menu button styling */
+.garage-header__mobile-btn {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.garage-header__mobile-btn-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger to X animation */
+.garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .garage-header__logo {
+        margin-left: 10px;
+    }
+
+    .garage-header__logo-img {
+        height: 35px;
+    }
+    
+    .garage-header__social {
+        position: absolute;
+        left: 220%;
+        transform: translateX(-50%);
+        top: 50%;
+        margin-top: -12px;
+        padding: 0;
+    }
+
+    .garage-header__social-icon {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .garage-header__social-icon:last-child {
+        margin-right: 0;
+    }
+
+    .garage-header__mobile-btn {
+        display: block;
+        position: absolute;
+        right: 10%;
+        top: 50%;
+        padding: 10px;
+        transform: translateY(-45%);
+    }
+
+    .garage-header__nav {
+        position: static;
+        transform: none;
+    }
+
+    .garage-header__nav-list {
+        display: none;
+    }
+
+    .garage-header__nav-list.active {
+        display: block;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: #ffa500;
+        padding: 20px;
+        z-index: 999;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .garage-header__phone .garage-header__nav-link {
+        display: inline-block;  /* Keep button width to content */
+    }
+
+    .garage-header__nav-item {
+        display: block;
+        margin: 10px 0;
+        text-align: left;
+    }
+
+    .garage-header__dropdown {
+        display: none;
+        position: absolute;
+        right: 50%;  /* Center it relative to parent nav item */
+        transform: translateX(50%);  /* Center it perfectly */
+        top: 100%;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        min-width: 200px;
+        text-align: center;  /* Center the text */
+        z-index: 1000;
+    }
+
+    /* Show dropdown when parent is active (controlled by JS) */
+    .garage-header__nav-item.active .garage-header__dropdown {
+        display: block;
+    }
+
+    .garage-header__dropdown-item {
+        padding: 10px;
+        list-style: none;
+    }
+
+    .garage-header__dropdown-link {
+        color: #000;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+        font-size: 16px;  /* Adjusted font size */
+        text-align: center;  /* Ensure text stays centered */
+    }
+
+    .garage-header__dropdown-link:hover {
+    color: #333;
+}
+
+    .garage-header__phone {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .garage-header__social {
+        display: none;
+    }
+    
+    .garage-header__logo {
+        margin-left: 0px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Active state styling */
+.garage-header__nav-item.active .garage-header__nav-link {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Inline CSS for background image */
+
+/* Hero Section */
+.hero-section {
+    margin-top: 80px; /* Push hero section below the fixed header */
+    position: relative; /* Create a context for the overlay */
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden; /* Prevent background from spilling */
+}
+
+
+.hero-image {
+    width: 100%;
+    height: 100%; /* Adjust height as needed */
+    background-image: url('covered_wood.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* Overlay */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Dark overlay with 50% opacity */
+    z-index: 1; /* Layer the overlay above the image */
+}
+
+
+/* Optional: Adjust the overlay styling */
+.new-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Add an overlay with 50% opacity */
+    z-index: 1;
+}
+
+/* Content inside Hero Section */
+.content-container {
+    position: relative; /* Ensure content stays above the overlay */
+    z-index: 2;
+    color: white; /* Adjust content color */
+    text-align: center;
+    padding-top: 150px; /* Center content vertically */
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+ <!--HERO SECTION-->
+    <section class="hero-section">
+        <div class="hero-image"></div>
+        <div class="new-overlay"></div>   
+        <div class="content-container">
+            
+            <h1>Design Your Own Garage Door</h1>
+            
+        
+        </div>
+    </section>
+
+
+<!-- Header -->
+
+
+    <!-- Header -->
+
+    <header class="garage-header">
+        <div class="garage-header__content-left">
+            <div class="garage-header__logo">
+                <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img">
+            </div>
+            <div class="garage-header__social">
+                <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
+                    <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
+                    <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
+                    <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
+                </a>
+                <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
+                    <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
+                </a>
+            </div>
+        </div>
+    
+        <nav class="garage-header__nav">
+            <ul class="garage-header__nav-list">
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Residential</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                        <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                        <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                        <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Commercial</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                        <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                        <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="#" class="garage-header__nav-link">Areas Served</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Houston</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Katy</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Pearland</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item">
+                    <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                    <ul class="garage-header__dropdown">
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                    </ul>
+                </li>
+                <li class="garage-header__nav-item garage-header__phone">
+                    <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+<!--  Test Data    -->
+
+<!-- Main container -->
+<div class="page-layout">
+    <!-- Design section -->
+    <section class="design-section">
+        <div class="design-container">
+            <!-- Heading -->
+            <h2 class="design-heading">Design Your Garage Door</h2>
+
+            <!-- CHI Logo -->
+            <img src="CHI-logo.jpg" alt="CHI Garage Doors Logo" class="design-logo">
+
+            <!-- Bullet Points -->
+            <ul class="design-bullets">
+                <li>Create a garage door that fits your style and needs. Choose from a variety of materials, colors, and hardware to craft the perfect look for your home or business.</li>
+                <li>Use the CHI Garage Doors design tool to visualize your customizations in real-time and make adjustments before committing to your design.</li>
+            </ul>
+
+            <!-- Button -->
+            <a href="https://doorvisions.chiohd.com/" class="design-button">Build Your Garage Door</a>
+        </div>
+    </section>
+
+
+    
+    
+    
+
+    <!-- Right Column -->
+    <div class="form-column">
+        <h3>Request Service</h3>
+        <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST">
+            <!-- Optional FormSubmit features -->
+            <input type="hidden" name="_subject" value="New Garage Door Service Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your garage door service needs.">
+    
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="address">Physical Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" required pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code">
+            </div>
+    
+            <div class="form-group">
+                <label for="description">How Can We Help?</label>
+                <textarea id="description" name="message" rows="4" required></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="photos">Upload Photos (optional)</label>
+                <input type="file" id="photos" name="attachment" accept="image/*" multiple>
+                <small>You can select multiple photos</small>
+            </div>
+    
+            <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
+    </div>
+</div>
+    <div id="footer-placeholder"></div>
+    <script src="footer.js"></script>
+</body>
+</html>

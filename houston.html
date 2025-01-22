@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Storefront Repair</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+
+        /* Hero Section Styles */
+.sub-header-container {
+    position: relative;
+    margin-top: 80px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.partial-overlay {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 2rem;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.booking-form-section {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+/* Mobile Menu Button Styles */
+.garage-header__mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    position: absolute;
+    right: 3.0rem;
+    top: 1.5rem;
+}
+
+.garage-header__mobile-btn-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.heading-title {
+    color: white;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+.heading-title:hover {
+    color: #ffa500;
+}
+
+.unique-toggle-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffa500;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+
+.unique-toggle-btn:hover {
+    background-color: #ff8c00;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Content Section Styles */
+.houston-overview {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.houston-overview h2 {
+    font-size: 1.8rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.houston-economics-section,
+.houston-cultural-section,
+.houston-strengths-section {
+    margin-bottom: 4rem;
+}
+
+.houston-overview h4 {
+    font-size: 2rem;
+    color: #ffa500;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #ffa500;
+    position: relative;
+}
+
+.houston-overview ul {
+    list-style: none;
+    padding: 0;
+}
+
+.houston-overview li {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.houston-overview li::before {
+    content: "•";
+    color: #ffa500;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.houston-overview li p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.houston-conclusion {
+    margin-top: 4rem;
+}
+
+.houston-conclusion h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.houston-conclusion p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Form Styles */
+.unique-booking-form-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.unique-form-container h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.unique-form-container p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.unique-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.unique-form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.unique-form-group input,
+.unique-form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.unique-form-group input:focus,
+.unique-form-group textarea:focus {
+    border-color: #ffa500;
+    outline: none;
+}
+
+.unique-submit-btn {
+    background-color: #ffa500;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.unique-submit-btn:hover {
+    background-color: #ffa500;
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.booking-form-container {
+    padding: 2rem;
+}
+
+.booking-form-container h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.booking-form-container p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+@media (max-width: 1024px) {
+
+    .garage-header__mobile-btn {
+        display: block;
+        right: 2rem;
+        top: 1.5rem;
+    }
+
+    .garage-header__nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .garage-header__nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .garage-header__nav-list.active {
+        display: flex;
+    }
+
+    .garage-header__nav-item {
+        width: 100%;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    .garage-header__nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .garage-header__dropdown {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        padding-left: 1rem;
+        background: #f9f9f9;
+        margin-top: 0.5rem;
+    }
+
+    .garage-header__dropdown-item {
+        padding: 0.5rem 0;
+    }
+
+    .garage-header__nav-item:hover .garage-header__dropdown {
+        display: block;
+    }
+
+    .garage-header__phone {
+        margin-top: 1rem;
+    }
+
+    .garage-header__phone-btn {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .heading-title {
+        font-size: 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .image-container {
+        height: 400px;
+    }
+
+    .houston-overview {
+        padding: 0 1rem;
+    }
+
+    .houston-overview h2 {
+        font-size: 1.5rem;
+    }
+
+    .houston-overview h4 {
+        font-size: 1.8rem;
+    }
+
+    .houston-overview li p {
+        font-size: 1rem;
+    }
+
+    .unique-booking-form-section {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .garage-header {
+        padding: 0.5rem;
+        position: relative;
+    }
+    
+    .garage-header__logo-img {
+        height: 40px;  /* Make logo smaller on mobile */
+    }
+    
+    .garage-header__mobile-btn {
+        padding: 5px;
+        right: 1rem;  /* Adjust right position */
+        top: 1.5rem;    /* Position from top */
+        transform: none;
+        position: absolute;
+    }
+
+    .garage-header__social-icon {
+       height: 20px;
+       width: 20px;
+    }
+
+    .garage-header__mobile-btn-bar {
+        width: 20px;  /* Make hamburger bars slightly smaller */
+        height: 2px;
+        margin: 4px 0;
+        
+    }
+}
+
+    </style>
+
+    <body>
+    <div class="overlay"></div>
+
+        <!-- Header -->
+
+    <header class="garage-header">
+    <div class="garage-header__content-left">
+          <div class="garage-header__logo">
+            <a href="index.html">
+            <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img"></a>
+        </div>
+        <div class="garage-header__social">
+            <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
+                <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
+                <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
+                <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
+                <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
+            </a>
+        </div>
+    </div>
+
+    <nav class="garage-header__nav">
+        <button class="garage-header__mobile-btn" aria-label="Toggle navigation menu">
+            <span class="garage-header__mobile-btn-bar"></span>
+            <span class="garage-header__mobile-btn-bar"></span>
+            <span class="garage-header__mobile-btn-bar"></span>
+        </button>
+        <ul class="garage-header__nav-list">
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Residential</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                    <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                    <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                    <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Commercial</a>
+          <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                    <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                    <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Areas Served</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Houston</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Katy</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Pearland</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item garage-header__phone">
+                <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="overlay"></div>
+<div class="booking-form-section">
+    <div class="booking-form-container">
+        <h2>Reach Out To Us</h2>
+        <p>Please fill out the form below and we'll get back to you shortly.</p>
+        <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_subject" value="New Commercial Door Service Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your commercial door service needs.">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code" required>
+            </div>
+            <div class="form-group">
+                <label for="request">Reason for Request</label>
+                <textarea id="request" name="request" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Upload Photo (optional)</label>
+                <input type="file" id="photo" name="attachment" accept="image/*" multiple>
+                <small>You can select multiple photos if needed</small>
+            </div>
+            <button type="submit" class="unique-submit-btn">Contact Us</button>
+        </form>
+    </div>
+</div>
+
+<div class="sub-header-container">
+    <div class="image-container">
+        <img src="houston_skyline.jpg" alt="Garage Door" class="background-image">
+        <div class="partial-overlay">
+          <h2 class="heading-title">Houston, Texas</h2>
+        </div>
+        <button onclick="navigateToBooking()" class="unique-toggle-btn">Contact Us</button>
+    </div>
+</div>
+
+
+
+
+        <div class="houston-overview">
+        <h4>Overview</h4>
+        <ul>
+            <li><p>
+            Houston, Texas, is one of the most dynamic and diverse cities in the United States, making it a highly desirable place to live. As the fourth-largest city in the country, Houston offers a unique blend of cultural richness, economic opportunity, and world-class amenities, drawing people from all over the world. From its booming job market to its vibrant arts scene, there are countless reasons why residents love calling Houston home.
+            </p></li>
+        </ul>
+
+            <div class="houston-economics-section">
+                <h4>Economic Strengths</h4>
+                <ul>
+                    <li><p>
+                        Houston is often referred to as the "Energy Capital of the World," and for good reason. The city is a global leader in the energy industry, particularly oil and gas, and serves as the headquarters for many Fortune 500 companies.
+                    </p></li>
+                    <li><p>
+                        Beyond energy, Houston has a diverse economy that spans healthcare, aerospace, technology, and manufacturing. The Texas Medical Center, the largest medical complex in the world, is a major employer and a global hub for medical research and innovation. 
+                    </p></li>
+                    <li><p>
+                        This robust job market makes Houston a top destination for professionals seeking career growth and stability.
+                    </p></li>
+                    <li><p>
+                        One of Houston's biggest draws is its affordability, especially when compared to other major metropolitan areas like New York, Los Angeles, or Chicago. Housing in Houston is relatively affordable, with a wide range of options to suit different budgets and lifestyles. From trendy apartments in downtown Houston to spacious suburban homes in communities like The Woodlands, Katy, and Sugar Land, residents can find a home that fits their needs. Additionally, Texas has no state income tax, which further enhances the financial appeal of living in Houston.
+                    </p></li>
+                </ul>
+            </div>
+
+            <div class="houston-cultural-section">
+                <h4>Cultural Attractions</h4>
+                <ul>
+                    <li><p>
+                        Cultural Diversity. Houston is one of the most diverse cities in the United States, with residents representing over 145 different languages and cultures. This diversity is reflected in the city’s food, festivals, and neighborhoods. Food lovers are particularly drawn to Houston for its incredible culinary scene, which includes everything from authentic Tex-Mex and Southern BBQ to international cuisines like Vietnamese, Indian, and Ethiopian. The city also hosts cultural events year-round, such as the Houston Livestock Show and Rodeo, the International Festival, and the Lunar New Year celebrations.
+                    </p></li>
+                    <li><p>
+                        World-Class Arts and Entertainment. Houston boasts a thriving arts and entertainment scene that caters to all interests. The Museum District is home to 19 world-class institutions, including the Houston Museum of Natural Science, the Museum of Fine Arts, and the Children's Museum. For performing arts enthusiasts, the Theater District features top-tier performances from the Houston Ballet, Houston Symphony, and Houston Grand Opera. Sports fans are equally spoiled, with professional teams like the Houston Astros (MLB), Houston Texans (NFL), and Houston Rockets (NBA) providing year-round excitement.
+                    </p></li>
+                    <li><p>
+                        Green Spaces and Outdoor Activities.  Despite being a bustling metropolis, Houston is committed to preserving green spaces for residents to enjoy. The city has over 50,000 acres of parks and open spaces, including Hermann Park, Memorial Park, and Buffalo Bayou Park. These areas offer opportunities for hiking, biking, picnicking, and kayaking, providing a natural escape from urban life. Houston’s warm climate allows for outdoor activities almost year-round.
+                    </p></li>
+                 </ul>
+            </div>
+
+            <div class="houston-strengths-section">
+                <h4>What Make Houston So Different</h4>
+                <ul>
+                    <li><p>
+                        Education and Innovation. Houston is home to prestigious educational institutions such as Rice University, the University of Houston, and Texas Southern University. These universities contribute to the city’s innovative spirit and provide residents with access to top-tier education and research. The presence of these institutions, along with renowned public and private schools, makes Houston an appealing choice for families and students.
+                    </p></li>
+                    <li><p>
+                        Proximity to the Coast and Travel Opportunities. Houston's location near the Gulf of Mexico provides residents with easy access to coastal destinations like Galveston, where they can enjoy beaches and water activities. The city is also a major transportation hub, with two major airports—George Bush Intercontinental Airport (IAH) and William P. Hobby Airport (HOU)—offering direct flights to destinations around the globe..
+                    </p></li>
+                    <li><p>
+                        Community and Southern Hospitality. Despite its size, Houston maintains a strong sense of community and Southern hospitality. Residents are known for their friendliness and willingness to help one another. Neighborhoods often organize local events, fostering connections among residents and creating a welcoming environment for newcomers.
+                    </p></li>
+                 </ul>
+            </div>
+
+            <div class="houston-conclusion"></div>
+            <h4>Conclusion</h4>
+            <ul>
+                <li><p>
+                    Houston, TX, is a city that truly has something for everyone. Its strong economy, cultural diversity, affordable cost of living, and world-class amenities make it an attractive place to live for families, young professionals, and retirees alike. Whether you’re looking for career opportunities, a vibrant social scene, or a safe and welcoming community, Houston offers it all. It’s no wonder so many people are proud to call this dynamic city home.
+                </p></li>
+            </ul>
+            </div>
+
+
+        <div id="footer-placeholder"></div>
+    </body>
+</head>

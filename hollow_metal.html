@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Metal Doors</title>
+    <style>
+        /* Base font setting */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        .site-header {
+            background-color: #ffa500;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-button {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Hero Section styles */
+        .hero {
+            position: relative;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 100px 2rem;
+            background-image: url('Hollow_hero.png'); /* Your background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 1;
+        }
+
+        .hero .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Modal styles */
+        #bookingModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .modal-close-btn {
+            cursor: pointer;
+            font-size: 20px;
+            color: #555;
+            border: none;
+            background: transparent;
+        }
+
+        .modal-close-btn:hover {
+            color: #222;
+        }
+
+        /* Form styles */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-button {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* General Section styles */
+        section {
+            padding: 2rem 0;
+        }
+
+        .intro-section, .door-info, .advantages-info {
+            background-color: #f9f9f9;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .advantage-card {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .list-disc {
+            list-style-type: disc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="text-white hover:text-gray-200 font-semibold text-xl">Home</a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:" class="text-white hover:text-gray-200">Your Phone Number</a>
+                <button class="contact-button" onclick="openModal()">Book Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with background image -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1 class="text-4xl font-bold mb-4">Hollow Metal Doors</h1>
+            <p class="text-xl">Professional-grade security and durability for your commercial facility</p>
+        </div>
+    </section>
+
+    <!-- Updated Introduction Section with image -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="text-2xl font-bold mb-6">Introduction to Hollow Metal Doors</h2>
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-2/3">
+                    <p class="text-lg mb-6">Choosing a commercial metal door can be tough, with many factors to consider. Generally, it should be secure, reliable, and built to last.</p>
+                    <p class="text-lg mb-6">One of the most popular for industrial and public facilities is the hollow metal door. You've probably seen them before in hospitals, office buildings, warehouses, or commercial entrances, for example. These doors are strong and durable enough to withstand physical and fire attacks. Yet, that's not all.</p>
+                    <p class="text-lg">Keep reading to find out the full potential of hollow metal doors and how they can improve the security, durability, and functionality of your facility.</p>
+                </div>
+                <div class="md:w-1/3">
+                    <img src="hollow2.jpg" alt="Hollow Metal Door Example" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is a hollow metal door used for Section -->
+    <section class="door-info bg-gray-50">
+        <div class="container">
+            <h2 class="text-2xl font-bold mb-6">Purposes of a Hollow Metal Door</h2>
+            <p>A hollow metal door is one of the most popular choices for commercial use. They come in varying sizes and are made of stainless steel. Metal sheets and insulation materials like honeycomb or polystyrene are combined. You can choose a single door or double door model.</p>
+            <div class="applications">
+                <p>Best applications for hollow metal doors? These doors can be installed in all kinds of industrial buildings, both exterior and interior. You can find them in:</p>
+                <ul class="list-disc ml-6 mt-2 space-y-1">
+                    <li>Hotels</li>
+                    <li>Schools</li>
+                    <li>Conference centers</li>
+                    <li>Warehouses</li>
+                    <li>Administrative buildings</li>
+                    <li>Hospitals</li>
+                    <li>Manufacturing facilities</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages-info">
+        <div class="container">
+            <h2 class="text-2xl font-bold mb-6">Advantages of Hollow Metal Doors</h2>
+            <p>We've already defined what a hollow metal door is and where you can find it. Now, let's discuss why these doors are so popular among commercial building owners and what benefits they offer:</p>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <h3 class="text-xl font-semibold mb-3">Low Maintenance</h3>
+                    <p>These doors don't require a lot of upkeep. Made from galvanized stainless steel, they resist various outside conditions and are not prone to corrosion.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3 class="text-xl font-semibold mb-3">Durability</h3>
+                    <p>Their biggest advantage is their longevity. Hollow metal doors last much longer than regular wooden or plastic doors and resist damage and wear.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3 class="text-xl font-semibold mb-3">Energy Efficiency</h3>
+                    <p>Thanks to the insulation material inside, hollow metal

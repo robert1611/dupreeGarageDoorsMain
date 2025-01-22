@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Door Installations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0x;
+            min-height: 100vh;
+        }
+
+        .left-title-container {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 25%;
+            height: 100vh;
+            padding: 100px 30px 30px 30px;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .left-title-container h1 {
+            color: #0066cc;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+
+        .left-title-container li {
+            color: #0066cc;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .left-title-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .text-overlay {
+            position: absolute;
+            left: 0;
+            top: 85px;/* Positions it below the header */
+            width: 60%;
+            padding: 100px 30px 40px 30px;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(2px);
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+        } 
+
+        .features-comparison {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+            list-style-position: inside;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        @media (max-width: 768px) {
+            .features-comparison {
+                flex-direction: column;
+            }
+
+            .column {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* background image */
+        .background-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #ffa500;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-sizing: border-box;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Logo Styling */
+        .navbar .logo {
+            height: 40px;
+            width: auto;
+            display: block;
+            padding-left: 140px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a.active {
+            background-color: white;
+            color: #ffa500;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .phone-button {
+            background-color: white;
+            color: #ffa500 !important;
+            border: 2px solid white;
+            font-weight: 500;
+        }
+
+        .contact-button {
+            background-color: transparent;
+            color: white !important;
+            border: 2px solid white;
+            font-weight: 500;
+        }
+
+        /* Form Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 500;
+        }
+
+        .submit-btn:hover {
+            background-color: #e65d00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem;
+            }
+            
+            body {
+                padding-top: 140px;
+            }
+
+            .nav-links, .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar a {
+                text-align: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .left-title-container {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 20px;
+            }
+        }
+
+
+        .features-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
+
+.features-section table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.features-section th, 
+.features-section td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.features-section th {
+    background-color: #ffa500;
+    color: white;
+    font-weight: 700;
+}
+
+.features-section ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.features-section li {
+    margin-bottom: 8px;
+    color: #4a5568;
+    padding-left: 0;
+}
+
+.features-section li:before {
+    content: none;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">
+                <img src="logo_orange.png" alt="Company Logo" class="logo">
+            </a>
+        </div>
+        <div class="nav-buttons">
+            <a href="tel:+1234567890" class="phone-button">📞 (123) 456-7890</a>
+            <a href="#" class="contact-button" onclick="showContactForm(event)">Contact Us</a>
+        </div>
+    </nav>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <h2>Book Your Appointment</h2>
+            <p>Please fill out the form below and we'll get back to you shortly.</p>
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="background-wrapper">
+        <img src="Planks.jpg" alt="Background">
+    </div>
+
+
+    <div class="left-title-container">
+        <h1>Garage Doors</h1>
+
+        <div class="text-overlay">
+        <ul>
+            <li>Curb Appeal</li>
+            <li>Security</li>
+            <li>Convenience</li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="content-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Utility: Security</td>
+                    <td>
+                        <ul>
+                            <li>A garage door is a crucial barrier that protects your home and belongings from unauthorized access.</li>
+                            <li>Modern garage doors are often equipped with advanced locking mechanisms and security systems, such as rolling code technology, which changes the access code each time the door is used.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Utility: Convenience</td>
+                    <td>
+                        <ul>
+                            <li>Automatic garage doors make daily life easier by allowing homeowners to open and close the door with the push of a button.</li>
+                            <li>Smart garage door systems can be controlled via smartphones, offering remote operation and status updates.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Utility: Energy Efficiency</td>
+                    <td>
+                        <ul>
+                            <li>Insulated garage doors help maintain a stable temperature inside the garage, reducing energy costs for homes with attached garages.</li>
+                            <li>This is especially valuable in extreme weather conditions, keeping the garage functional for storage or as a workspace.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Utility: Protection from the Elements</td>
+                    <td>
+                        <ul>
+                            <li>A garage door shields vehicles, tools, and stored items from rain, snow, UV rays, and other environmental factors.</li>
+                            <li>A well-maintained garage door prevents drafts, leaks, and other weather-related damage.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Utility: Safety</td>
+                    <td>
+                        <ul>
+                            <li>Modern garage doors come with safety features like auto-reverse mechanisms, which prevent the door from closing if an object or person is detected.</li>
+                            <li>This minimizes the risk of accidents and injuries.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Curb Appeal: First Impressions</td>
+                    <td>
+                        <ul>
+                            <li>The garage door is often one of the most noticeable elements of a home's exterior, significantly impacting its overall appearance.</li>
+                            <li>A stylish, well-designed garage door can elevate the aesthetic appeal of the property, making it more attractive to visitors and potential buyers.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Curb Appeal: Customization Options</td>
+                    <td>
+                        <ul>
+                            <li>Garage doors are available in various materials, designs, colors, and finishes, allowing homeowners to match them to their architectural style.</li>
+                            <li>Decorative elements such as windows, hardware, and unique panel designs add character and charm.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Curb Appeal: Increased Property Value</td>
+                    <td>
+                        <ul>
+                            <li>Replacing or upgrading a garage door is one of the most cost-effective ways to increase a home's resale value.</li>
+                            <li>A modern, visually appealing garage door enhances the perception of quality and care in the property.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Curb Appeal: Complementing the Home's Style</td>
+                    <td>
+                        <ul>
+                            <li>A well-chosen garage door can harmonize with other exterior elements, such as siding, roofing, and landscaping, creating a cohesive look.</li>
+                            <li>For instance, carriage-style doors add a classic touch to traditional homes, while sleek, minimalistic designs suit contemporary architecture.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Curb Appeal: Neighborhood Appeal</td>
+                    <td>
+                        <ul>
+                            <li>A stylish garage door contributes to the overall aesthetic of the neighborhood, especially in areas with a strong emphasis on design uniformity or modernity.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        function showContactForm(event) {
+            event.preventDefault();
+            document.getElementById('contactModal').classList.add('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Form submitted successfully!');
+            document.getElementById('contactModal').classList.remove('active');
+            document.getElementById('contactForm').reset();
+        }
+
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

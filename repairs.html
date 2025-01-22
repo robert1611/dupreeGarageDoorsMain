@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Metal Doors</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base font setting */
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            overflow-x: hidden;
+         }
+
+         /* General Section Styles */
+   
+
+
+/* Introduction Section */
+.hollow-metal-doors {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Introduction Section */
+.hmd-introduction {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hmd-text-content {
+    flex: 0 0 65%;  /* Takes up 65% of the container width */
+}
+
+.hmd-image-content {
+    flex: 1;
+    margin: 0;
+}
+
+.hmd-image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Purposes Section */
+.hmd-purposes {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hmd-purposes .hmd-text-content {
+    max-width: 50%;  /* Limits text width to 50% */
+    margin: 0 auto 0 0;  /* Aligns to the left */
+}
+
+/* Advantages Section */
+.hmd-advantages {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hmd-advantages > h2 {
+    max-width: 50%;  /* Limits heading width */
+    margin: 0 auto 3rem 0;  /* Aligns to the left */
+}
+
+.hmd-advantages-grid {
+    max-width: 50%;  /* Limits grid width */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 0 auto 0 0;  /* Aligns to the left */
+}
+
+/* Typography */
+h2 {
+    font-size: 2.2rem;
+    color: #1a237e;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #283593;
+    margin: 2rem 0 1rem;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    color: #424242;
+    font-size: 1.1rem;
+}
+
+/* Lists */
+.hmd-applications-list,
+.hmd-lock-types-list {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.hmd-applications-list li,
+.hmd-lock-types-list li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+}
+
+.hmd-applications-list li:before,
+.hmd-lock-types-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3f51b5;
+}
+
+.hmd-advantage-card {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.hmd-advantage-card:hover {
+    transform: translateY(-5px);
+}
+
+.hmd-advantage-card h3 {
+    color: #1a237e;
+    margin-top: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hmd-text-content,
+    .hmd-purposes .hmd-text-content,
+    .hmd-advantages > h2,
+    .hmd-advantages-grid {
+        max-width: 100%;  /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hmd-introduction {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .hollow-metal-doors {
+        padding: 1rem;
+    }
+
+    .hmd-advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hmd-purposes,
+    .hmd-advantages {
+        padding: 2rem;
+    }
+}
+
+.hero-image {
+    background-image: url('hollow_hero.png'); /* Replace with the path to your new photo */
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* Adjust height as needed */
+    position: relative; /* Ensure child elements like .new-overlay position correctly */
+    overflow: hidden; /* Prevent child elements from overflowing */
+}
+
+/* Move Text Down in the Hero Section */
+.content-container {
+    position: absolute; /* Position relative to the hero section */
+    bottom: -150px; /* Move text up from the bottom, adjust as needed */
+    left: 25%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering offset */
+    text-align: left; /* Center-align the text */
+    z-index: 2; /* Ensure the text is above the overlay */
+    color: white; /* Keep text visible */
+}
+
+.new-overlay {
+    height: 74%; /* Fills the height of the parent container */
+}
+
+@media (min-width: 481px) and (max-width: 1024px){
+    .hero-image {
+        height: 500px; /* Adjust the height for smaller screens */
+        margin: 0 auto;
+    }
+
+    .new-overlay {
+        display:none;
+        height: 30%; /* Match the height dynamically */
+    }
+
+
+
+    .content-container {
+        bottom: -150px; /* Move text up from the bottom, adjust as neededs */
+        left: 50%; /* Center horizontally */
+    }
+}
+
+
+   @media (max-width: 480px) {
+    .hero-image {
+        height: 400px; /* Adjust the height for smaller screens */
+    }
+
+    .new-overlay {
+        display:none;
+        height: 30%; /* Match the height dynamically */
+    }
+
+    .content-container {
+    
+    position: absolute; /* Position relative to the hero section */
+    margin-bottom: 100px;
+    left: 25%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering offset */
+    text-align: left; /* Center-align the text */
+    z-index: 2; /* Ensure the text is above the overlay */
+    color: white; /* Keep text visible */ 
+   }
+
+
+}
+
+    </style>
+</head>
+
+<header class="garage-header">
+    <div class="garage-header__content-left">
+        <div class="garage-header__logo">
+            <a href="index.html">
+            <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img"></a>
+        </div>
+        <div class="garage-header__social">
+            <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
+                <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
+                <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
+                <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
+                <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
+            </a>
+        </div>
+    </div>
+
+    <nav class="garage-header__nav">
+        <button class="garage-header__mobile-btn">
+            <span class="garage-header__mobile-btn-bar"></span>
+            <span class="garage-header__mobile-btn-bar"></span>
+            <span class="garage-header__mobile-btn-bar"></span>
+        </button>
+        <ul class="garage-header__nav-list">
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Residential</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                    <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                    <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                    <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Commercial</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                    <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                    <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Areas Served</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Houston</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Katy</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Pearland</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item garage-header__phone">
+                <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<!--HERO SECTION-->
+<section class="hero">
+    <div class="hero-image"></div>
+    <div class="new-overlay"></div>   
+    <div class="content-container">
+        
+        <h1>Hollow Metal Doors</h1>
+        <h2>Professional-grade security and durability for your commercial facility</h2>
+        
+        <button class="book-now-btn" onclick="navigateToBooking()">BOOK NOW</button>
+    </div>
+    <div class="overlay"></div>
+    <div class="booking-form-section" id="bookingForm">
+        <div class="form-container">
+            <h2>Reach Out To Us</h2>
+            <p>Please fill out the form below and we'll get back to you shortly.</p>
+            <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" enctype="multipart/form-data">
+                <!-- Hidden FormSubmit features -->
+                <input type="hidden" name="_subject" value="New Commercial Door Service Request">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your commercial door service needs.">
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="zipcode">Zip Code</label>
+                    <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code" required>
+                </div>
+                <div class="form-group">
+                    <label for="request">Reason for Request</label>
+                    <textarea id="request" name="request" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Upload Photo (optional)</label>
+                    <input type="file" id="photo" name="attachment" accept="image/*" multiple>
+                    <small>You can select multiple photos if needed</small>
+                </div>
+                <button type="submit" class="submit-btn">Contact Us</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="hollow-metal-doors">
+    <!-- Introduction Section -->
+    <section class="hmd-introduction">
+        <div class="hmd-text-content">
+            <h2>Introduction to Hollow Metal Doors</h2>
+            <p>Choosing a commercial metal door can be tough, with many factors to consider. Generally, it should be secure, reliable, and built to last.</p>
+            <p>One of the most popular for industrial and public facilities is the hollow metal door. You've probably seen them before in hospitals, office buildings, warehouses, or commercial entrances, for example. These doors are strong and durable enough to withstand physical and fire attacks. Yet, that's not all.</p>
+            <p>Keep reading to find out the full potential of hollow metal doors and how they can improve the security, durability, and functionality of your facility.</p>
+        </div>
+        <figure class="hmd-image-content">
+            <img src="hollow2.jpg" alt="Example of a sturdy hollow metal door">
+        </figure>
+    </section>
+
+    <!-- Purposes Section -->
+    <section class="hmd-purposes">
+        <div class="hmd-text-content">
+            <h2>Purposes of a Hollow Metal Door</h2>
+            <p>A hollow metal door is one of the most popular choices for commercial use. They come in varying sizes and are made of stainless steel. Metal sheets and insulation materials like honeycomb or polystyrene are combined. You can choose a single door or double door model.</p>
+
+            <h3>Common Applications:</h3>
+            <ul class="hmd-applications-list">
+                <li>Hotels</li>
+                <li>Schools</li>
+                <li>Conference centers</li>
+                <li>Warehouses</li>
+                <li>Administrative buildings</li>
+                <li>Hospitals</li>
+                <li>Manufacturing facilities</li>
+            </ul>
+
+            <h3>Commercial Lock Considerations</h3>
+            <p>An important thing to consider when installing this door type is the commercial lock you will use. No matter how good and quality your door is, it will be useless without a good lock mechanism. The most popular lock types for these doors are:</p>
+            <ul class="hmd-lock-types-list">
+                <li>Electric strikes</li>
+                <li>Locks for Keypads</li>
+                <li>Panic bars</li>
+                <li>Mortise locks</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="hmd-advantages">
+        <h2>Advantages of Hollow Metal Doors</h2>
+        <div class="hmd-advantages-grid">
+            <article class="hmd-advantage-card">
+                <h3>Low Maintenance</h3>
+                <p>These doors don't require a lot of upkeep. Made from galvanized stainless steel, they resist various outside conditions and are not prone to corrosion.</p>
+            </article>
+
+            <article class="hmd-advantage-card">
+                <h3>Durability</h3>
+                <p>Their biggest advantage is their longevity. Hollow metal doors last much longer than regular wooden or plastic doors and resist damage and wear.</p>
+            </article>
+
+            <article class="hmd-advantage-card">
+                <h3>Energy Efficiency</h3>
+                <p>Thanks to the insulation material inside, hollow metal doors are more energy-efficient compared to other door types.</p>
+            </article>
+
+            <article class="hmd-advantage-card">
+                <h3>Fire Safety</h3>
+                <p>Hollow metal doors are fireproof and can withstand high temperatures for extended periods, providing excellent fire resistance.</p>
+            </article>
+        </div>
+    </section>
+</section>
+
+
+
+
+
+    <script>
+
+   
+
+
+    
+
+       
+    </script>
+
+<div id="footer-placeholder"></div>
+</body>
+</html>
+

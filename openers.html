@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Door Installations</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Scoped Styles for the Page */
+
+
+        /* Card Grid Styling */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .model-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .model-card h3 {
+            color: #2563eb;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .model-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+            
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #4a5568;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }
+
+      
+        
+
+        .sub-header-container {
+            position: relative;
+            margin-top: 80px; /* Reduce from 120px */
+            width: 100vw; /* Change from 100% to 100vw */
+            margin-left: calc(-50vw + 50%); /* Add this to extend full width */
+            margin-right: calc(-50vw + 50%); /* Add this to extend full width */
+        }
+
+        .image-container {
+            position: relative;
+            height: 400px; /* Adjust height as needed */
+            width: 100%;
+        }
+
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Add overlay styles if needed */
+        .partial-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .partial-overlay h2 {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .unique-toggle-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            transform: translate(-50%, -50%);
+            margin-top: 125px;
+            z-index: 20;
+            background-color: #ffa500;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease; /* Add this */
+        }
+
+        .unique-toggle-btn:hover {
+            background-color: #2563eb;
+            color: #ffa500;
+            font-weight: 700;
+          
+        }
+
+        /* Unique Hidden Form Styling */
+        .unique-booking-form-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .unique-form-group {
+                margin-bottom: 15px;
+            }
+
+            .unique-form-group label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #333;
+            }
+
+            .unique-form-group input,
+            .unique-form-group textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 14px;
+                box-sizing: border-box;
+            }
+
+        .unique-submit-btn {
+            background-color: #ffa500;
+            color: white;
+            font-size: 16px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+
+        
+
+        .heading-title {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        .heading-title:hover {
+            color: #ffa500;
+        }
+
+/* Center button styling */
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #garage-door-page .page-content h2 {
+                font-size: 1.5rem;
+            }
+
+            #garage-door-page .navbar .logo {
+                height: 30px;
+            }
+        }
+
+
+    
+
+
+.garage-opener-content {
+    position: relative;
+    margin-top: 0;
+    background: white;
+    padding: 2rem;
+}
+
+.garage-opener-content section {
+    margin-bottom: 3rem;
+}
+
+.garage-opener-content h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ff6b00;
+    padding-bottom: 0.5rem;
+}
+
+.garage-opener-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.garage-opener-content li {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.garage-opener-content li::before {
+    content: "•";
+    color: #ff6b00;
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+}
+
+/* Form and button styles - keep these names as they are */
+.unique-booking-form-section {
+    display: none; /* This hides the form by default */
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+<header class="garage-header">
+    <div class="garage-header__content-left">
+        <div class="garage-header__logo">
+            <a href="index.html">
+            <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img"></a>
+        </div>
+        <div class="garage-header__social">
+            <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
+                <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
+                <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
+                <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
+            </a>
+            <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
+                <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
+            </a>
+        </div>
+    </div>
+
+    <nav class="garage-header__nav">
+        <button class="garage-header__mobile-btn">
+            <span class="garage-header__mobile-btn-bar"></span>
+            <span class="garage-header__mobile-btn-bar"></span>
+            <span class="garage-header__mobile-btn-bar"></span>
+        </button>
+        <ul class="garage-header__nav-list">
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Residential</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                    <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                    <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                    <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Commercial</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                    <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                    <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="#" class="garage-header__nav-link">Areas Served</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Houston</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Katy</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Pearland</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item">
+                <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                <ul class="garage-header__dropdown">
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                </ul>
+            </li>
+            <li class="garage-header__nav-item garage-header__phone">
+                <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+            </li>
+        </ul>
+    </nav>
+</header>    
+
+<div class="unique-booking-form-section" id="uniqueBookingForm" style="display: none;">
+    <div class="unique-form-container">
+        <h2>Reach Out To Us</h2>
+        <p>Please fill out the form below and we'll get back to you shortly.</p>
+        <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_subject" value="New Commercial Door Service Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your commercial door service needs.">
+
+            <div class="unique-form-group">
+                <label for="unique-name">Full Name</label>
+                <input type="text" id="unique-name" name="name" required>
+            </div>
+            <div class="unique-form-group">
+                <label for="unique-email">Email Address</label>
+                <input type="email" id="unique-email" name="email" required>
+            </div>
+            <div class="unique-form-group">
+                <label for="unique-phone">Phone Number</label>
+                <input type="tel" id="unique-phone" name="phone" required>
+            </div>
+            <div class="unique-form-group">
+                <label for="unique-zipcode">Zip Code</label>
+                <input type="text" id="unique-zipcode" name="zipcode" pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code" required>
+            </div>
+            <div class="unique-form-group">
+                <label for="unique-request">Reason for Request</label>
+                <textarea id="unique-request" name="request" rows="3" required></textarea>
+            </div>
+            <div class="unique-form-group">
+                <label for="unique-photo">Upload Photo (optional)</label>
+                <input type="file" id="unique-photo" name="attachment" accept="image/*" multiple>
+                <small>You can select multiple photos if needed</small>
+            </div>
+            <button type="submit" class="unique-submit-btn">Contact Us</button>
+        </form>
+    </div>
+</div> 
+
+<div class="sub-header-container">
+    <div class="image-container">
+        <img src="84505R.jpg" alt="Garage Door" class="background-image">
+        <div class="partial-overlay">
+          <h2 class="heading-title">Unlock the Future with Advanced Garage Door Openers!</h2>
+        </div>
+        <button id="uniqueToggleFormBtn" class="unique-toggle-btn">Contact Us</button>
+    </div>
+</div>
+ 
+      
+
+      <div class="garage-opener-content">
+        <section class="opener-overview">
+        <h2>Garage Door Opener Overview</h2>
+        <ul>
+            <li>What is a Garage Door Opener? A garage door opener is a motorized device that opens and closes a garage door. The name, however, is a bit misleading. Garage Door Openers are only meant to pull about 20 pounds, while your garage door weighs anywhere between 120lbs to 400lbs. In truth, the spring system is really what opens your door. The garage door opener assists, but doesn't opener your door. This is important because your issue might be the door itself. You might have alignment issues, tracks the are too right, or a spring that doesn't have the right amount of tension</li>
+            <li>Types of Garage Door Openers. Three main garage door openers exist: 1. Belt Drives 2. Chain Drives 3. Screw (aka Worm) Drives. Belt Drives are the best option of the three and most popular and screw drives have largely been phased out. Chain drives have been around forever but are inferior to belt drives. Belt drives are better for three reasons: 1. They last longer 2. Require less maintenance and 3. have better warranties</li>
+        </ul>
+        </section>
+
+        <section class="opener-repair">
+        <h2>Repair or Replace</h2>
+        <ul>
+            <li>This depends on the underlying issue. If it a simple fix or adjustment like a sensor needs to be replaced, then repair is the best. But if you have bigger issues like a bad logic board or the gears are stripped out, then replacement is the best. In our experience, it is usually better to replace. You are looking at an all in cost of $450+ and have the piece of mind that you won't have to pay for the same issue 2 or 3 times.</li>
+            <li>How often do you use your garage door opener? If it is like your front door, then it make more sense to replace. If you have detached garage where you store stuff, then it isn't as important.</li>
+            <li>How old is your opener? The expected life of a garage door opener is 8 years. If yours is older, you got your monies worth. Anything over 10 years, it isn't worth putting any money into it</li>
+        </ul>
+        </section>
+
+        
+        <section class="opener-features">
+        <h2>Advanced Features</h2>
+        <ul>
+            <li>Wifi is the biggest upgrade to garage door openers in the past decade. Virtually all models have it. Allows you to open your garage door from your phone. Super convenient for getting things dropped off, without giving access to your home itself.</li>
+            <li>Amazon Key is a great amenity if you get packages delivered and you want to know they've been safely delivered. Amazon can access your garage</li>
+            <li>Smart garage doors mean different different folks. For some, it means having WiFi. For others, it means a system that will integrate with Alexa or some other platform-logo</li>
+            <li>In Houston, we can count on two things. 1. The power goes out and 2. Someone is going to try and rob you. Upgraded features include battery backup, built in bright lighting, and cameras</li>
+        </ul>
+        </section>
+
+        <section class="opener-brands">
+        <h2>Which Brand / Model</h2>
+        <ul>
+            <li>Are All Brands Are NOT Created Equal. Do yourself a favor and get an opener from the Liftmaster / Chamberlain family. The also make Craftsman. Avoid the Genie brand like the plague, they are trash. Don't do it. Other brands like Marantec and Linear have a following, but just stick with Liftmaster</li>
+            <li>Within the Liftmaster / Chamberlain family you have a lot of different model that range from about $450 in price to $1,100. It really depends on what features you want, but here are our recommendations</li>
+        </ul>
+        </section>
+
+        <div class="model-grid">
+            <div class="model-card">
+                <h3>Chamberlain 4505</h3>
+                <p>Belt Drive with 2 remotes, keypad, wifi, and 3/4 HP motor. Long warranty on motor and belt, up to lifetime.</p>
+            </div>
+            <div class="model-card">
+                <h3>Chamberlain 4613</h3>
+                <p>All the 4505 features plus built-in lighting, battery backup, and DC motor for quieter operation.</p>
+            </div>
+            <div class="model-card">
+                <h3>Liftmaster 81600</h3>
+                <p>Chain drive with DC motor for optimal performance. Combines reliability with modern technology.</p>
+            </div>
+            <div class="model-card">
+                <h3>Liftmaster 84505</h3>
+                <p>Belt Drive with DC motor and camera. Super smooth operation with solid rail system.</p>
+            </div>
+            <div class="model-card">
+                <h3>Liftmaster 87504</h3>
+                <p>The Cadillac of the Liftmaster line. 3/4 HP motor, smart configuration, 2000 lumen lighting, and best warranties.</p>
+            </div>
+            <div class="model-card">
+                <h3>Liftmaster 98022</h3>
+                <p>Unique side-mounted design without carriage and trolley system. Perfect for special installation requirements.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleFormBtn = document.getElementById("uniqueToggleFormBtn");
+        const bookingForm = document.getElementById("uniqueBookingForm");
+
+        // Ensure elements exist to avoid errors
+        if (!toggleFormBtn || !bookingForm) {
+            console.error("Toggle button or booking form not found");
+            return;
+        }
+
+        // Add click event listener to toggle visibility
+        toggleFormBtn.addEventListener("click", () => {
+            const isHidden = bookingForm.style.display === "none" || bookingForm.style.display === "";
+            bookingForm.style.display = isHidden ? "block" : "none"; // Toggle visibility
+            toggleFormBtn.textContent = isHidden ? "Hide Form" : "Show Form"; // Update button text
+        });
+    });
+})();
+
+        
+    </script>
+
+<div id="footer-placeholder"></div>
+<script src="script.js"></script>
+
+</body>
+</html>
+
