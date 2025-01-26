@@ -67,21 +67,8 @@ font-size: 2.5rem !important;
     background-color: #f9f9f9; /* Light gray background for the form section */
 }
 
-.custom-form-box {
-    flex: 0 0 40%;
-    height: auto;
-    margin-right: 2rem;
 
 
-    border: 2px solid #ccc; /* Add a border around the form */
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 8px;
-    width: 45%;
-    max-width: 600px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
 
 /* Title Styles */
 .custom-form-title {
@@ -148,6 +135,18 @@ font-size: 2.5rem !important;
     background-color: #1d4ed8;
 }
 
+.text-column {
+    flex: 1;
+    max-width: 600px;
+
+}
+
+
+
+.text-column h2 {
+   font-size: 42px !important;
+   margin-bottom: 20px;
+}
 
 .page-layout {
     display: flex;
@@ -169,27 +168,35 @@ font-size: 2.5rem !important;
 }
 
 .design-bullets {
-   list-style-type: disc;
+   list-style-type: disc !important;
    padding-left: 20px;
    margin: 20px 0;
+   max-width: 600px;
 }
 
 .design-bullets li {
    margin-bottom: 15px; }
 
-
-
-
-.custom-form-box {
-    /* Add to existing styles */
-    height: fit-content;
-    flex: 1;
-    max-width: 600px;
-    width: 45%;
-    padding: 30px;
-    margin: 0;
-
+.design-button {
+   display: block;
+   margin: 20px auto;
+   width: fit-content;
 }
+
+
+
+.two-column-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+
+
 
 @media (max-width: 768px) {
    .page-layout {
@@ -198,13 +205,29 @@ font-size: 2.5rem !important;
        padding: 1rem;
    }
 
-   .custom-form-box {
-       width: 90%;
-   }
+
 
    .design-section {
-   width: 50%;
+   width: 100%;
 }
+
+
+    .two-column-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .text-column, .custom-form-box {
+        width: 80%;
+        max-width: none;
+    }
+
+    .text-column {
+   text-align: center;
+}
+
+
 }
 
 </style>
