@@ -3,540 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garage Door Installations</title>
-   <link rel="stylesheet" href="styles.css" />
+    <title>Commercial Storefront Repair</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-
     <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Roboto", sans-serif;
-        }
 
-        body {
-            margin: 0;
+body {
+            font-family: 'Roboto', sans-serif;
+            margin: -20px;
             padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+           
         }
 
         
-   /*     #bookingForm {
-    display: block !important;
-    position: static;
+
+        .sub-header-container, .image-container {
+            margin: 0; /* Remove container margins */
+            padding: 0; /* Remove container padding */
+        }
+
+        .garage-header {
+            margin: 0; /* Remove any header margin */
+            padding: 0; /* Remove header padding */
+            width: 100%; /* Ensure the header spans the full width */
+        }
+
+        .background-image {
+            margin: 0; /* Remove any margin on the image */
+       
+            padding: 0; /* Remove any padding on the image */
+
+       }
+
+        .springs-text-content {
+        padding-left: 0%;
+        }
+
+               /* Hero Section Styles */
+
+.springs-text-content h2 {
+    font-size: 32px;  /* Base size */
+}
+
+.sub-header-container {
+    position: relative;
+    margin-top: 80px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.partial-overlay {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 2rem;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 1000;
+}
+
+.booking-form-section {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 500px;
-    margin: 2rem auto;
-    background-color: #f9fafb;
+    max-width: 600px;
+    background: white;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
 }
 
-        /* Header styling */
 
+.heading-title {
+    color: white;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
 
-.submit-btn {
-    display: block !important;
-    width: 100%;
-    padding: 12px 24px;
+.heading-title:hover {
+    color: #ffa500;
+}
+
+.unique-toggle-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #2563eb;
     color: white;
+    padding: 15px 30px;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 5px;
+    font-size: 1.2rem;
     cursor: pointer;
-    margin-top: 20px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    
 }
 
-.submit-btn:hover {
-    background-color: #1d4ed8;
+.unique-toggle-btn:hover {
+    background-color: #ff8c00;
+   
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .info-section {
-        flex-direction: column;
-    }
-
-    .text-content,
-    .image-content {
-        flex: 0 1 100%;
-    }
-
-    .advantages-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
+/* Content Section Styles */
+.houston-overview {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
 }
 
-        /* Hero Section */
-        .spring-header {
-            width: 100%;
-            height: 400px;
-            background-image: url('broken_spring.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            position: relative !important; /* Changed from sticky */
-            margin-top: 73px; /* Added to account for fixed navbar */
-        }
-
-        .hero-btn {
-            display: block;
-            width: 50%;
-            margin: 170px auto 0;
-            margin-top: 75px !important;
-            transform: translateY(75px) !important;
-            padding: 12px 24px;
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 24px !important; /* Increased font and added !important */
-            font-weight: bold;
-            cursor: pointer;
-            position: relative;
-            z-index: 1003;
-            transition: background-color 0.3s ease;
-        }   
-
-        .hero-btn:hover {
-            color: #ffa500;
-        }
-
-        .overlay-text {
-           
-            background-color: rgba(200, 200, 200, 0.7);
-            padding: 10px 40px;
-            border-radius: 5px;
-            margin-top: 50px;  /* Adjust this to control how far from top */
-            margin-left: 50px; /* Add this to move from left edge */
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            z-index: 1002;
-            align-self: flex-start;  /* Add this to align to start of flex container */
-        }
-
-        /*.overlay-text:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            background-color: rgba(220, 220, 220, 0.8);
-            
-        }*/
-
-        .overlay-text h1 {
-            color: black;
-            text-align: center;
-            padding-right: 20px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        /*.overlay-text:hover h1 {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            background-color: rgba(220, 220, 220, 0.8);
-            color:#2563eb;
-        }  */
-
-        .booking-form-section {
-            display: none; /* Hidden by default */
-            position: relative;
-            z-index: 1001;
-            margin: 2rem auto;
-            width: 90%;
-            max-width: 500px;
-            background-color: #f9fafb;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* HERO Section Mobile */
-
-        @media screen and (max-width: 768px) {
-        .overlay-text {
-            padding: 5px 20px;  /* Reduce padding */
-            margin-top: 30px;   /* Adjust top spacing */
-            margin-left: 20px;  /* Adjust left spacing */
-            max-width: 80%;     /* Limit width */
-            z-index: 1 !important;
-    }
-
-        .overlay-text h1 {
-            font-size: 1.5rem !important;  /* Reduce font size */
-    }
-
-        .hero-btn {
-            width: 60%;         /* Make button narrower */
-            margin-top: -220px !important;   /* Adjust button position */
-            font-size: 12px !important;    /* Reduce button font size */
-            padding: 8px 16px !important;  /* Reduce button padding */
-            margin-left: 30px;
-            z-index: 1 !important;
-    }
-
-        .garage-header__nav-list.active {
-            z-index: 9999;  /* Much higher than other elements */
-    }
-}
-
-@media screen and (max-width: 480px) {
-        .hero-btn{
-            width:40%;
-        }
-}
-
-        /* Content Sections */
-        .content-section {
-            padding: 40px 10%;
-            background-color: white;
-        }
-
-        .section-with-image {
-            display: flex;
-            gap: 30px;
-            margin: 40px 0;
-            align-items: start;
-        }
-
-        .text-content {
-            flex: 1;
-        }
-
-        .text-content h2,
-.text-half h2 {
-    color: #333;
-    margin: 30px 0 20px;
+.houston-overview h2 {
     font-size: 1.8rem;
-    font-family: "Roboto", sans-serif !important;  /* Force font */
-}
-
-.text-content ul,
-.text-half ul {
-    list-style-position: inside;
-    margin-bottom: 20px;
-    padding-left: 0 !important;
-}
-
-.text-content li,
-.text-content p,
-.text-half li,
-.text-half p 
-.text-contnent ul li
-.text-half ul li {
-    margin-bottom: 15px;
+    color: #333;
     line-height: 1.6;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.houston-economics-section,
+.houston-cultural-section,
+.houston-strengths-section {
+    margin-bottom: 4rem;
+}
+
+.houston-overview h4 {
+    font-size: 2rem;
+    color: #ffa500;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #ffa500;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.houston-overview h4:hover {
+    color: #2563eb;
+}
+
+.houston-overview ul {
+    list-style: none;
+    padding: 0;
+}
+
+.houston-overview li {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.houston-overview li::before {
+    content: "•";
+    color: #ffa500;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.houston-overview li p {
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: #444;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif !important;  /* Force font */
-    font-size: 1rem !important;  /* Force consistent size */
-    font-weight: 400 !important;
 }
 
-        .section-with-image:first-child .image-content {
-            flex: 1;
-            max-width: 600px;
-            margin-top: 100px;
-        }
+.houston-conclusion {
+    margin-top: 4rem;
+}
 
-        .section-with-image:nth-child(2) .image-content {
-            flex: 1;
-            max-width: 400px;
-            margin-top: 80px;
-        }
+.houston-conclusion h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
 
-        .section-with-image:nth-child(3) .image-content {
-            flex: 1;
-            max-width: 500px;
-            margin-top: 80px;
-        }
+.houston-conclusion p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+}
 
-        .image-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* Text Styling */
-        h2 {
-            color: #333;
-            margin: 30px 0 20px;
-            font-size: 1.8rem;
-        }
-
-        ul {
-            list-style-position: inside;
-            margin-bottom: 20px;
-        }
-
-        li, p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            color: #444;
-            text-decoration: none;
-            transition: text-decoration 0.3s ease;
-        }
-
-        
-
-        /* Torsion Section */
-        .torsion-section {
-            display: flex;
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .text-half {
-            flex: 1;
-        }
-
-        .image-half {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .image-half img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-width: 700px;
-            margin-top: 50px;
-        }
-
-        /*Contact Button */
-
-        .booking-form-section {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+/* Form Styles */
+.unique-booking-form-section {
+    max-width: 800px;
     margin: 2rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.form-container {
+.unique-form-container h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.unique-form-container p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.unique-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.unique-form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.unique-form-group input,
+.unique-form-group textarea {
     width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.unique-form-group input:focus,
+.unique-form-group textarea:focus {
+    border-color: #ffa500;
+    outline: none;
+}
+
+.unique-submit-btn {
+    background-color: #ffa500;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.unique-submit-btn:hover {
+    background-color: #ffa500;
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.booking-form-container {
+    padding: 2rem;
+}
+
+.booking-form-container h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.booking-form-container p {
+    color: #666;
+    margin-bottom: 2rem;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
 }
 
-.form-group label {
+
+@media screen and (max-width: 1093px) {
+   .springs-section-with-image {
+       flex-direction: column;
+       padding: 0 10%;
+       gap: 10px;
+   }
+   
+   .springs-text-content {
+       order: 1;
+   }
+   
+   .springs-image-content {
     display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+    margin: 0 auto;
+       order: 2;
+   }
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
 
-.form-group small {
-    display: block;
-    margin-top: 0.25rem;
-    color: #666;
-}
-
-.submit-btn {
-    background-color: #2563eb;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-.hero-btn {
-    background-color: #2563eb;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-    z-index: 1003;      /* Add this - even higher than overlay */
-    position: relative; /* Add this */
-
-}
-
-.hero-btn:hover {
-    background-color: #1d4ed8;
-}
-
-.submit-btn:hover {
-    background-color: #1d4ed8;
-}
-
-        /* Mobile Responsiveness */
-        @media screen and (max-width: 768px) {
-           
-
-            /* Header adjustments */
-            .spring-header {
-                height: 200px;
-               
-            }
-
-            .overlay-text {
-                margin-top: 120px;
-                padding: 10px 20px;
-            }
-
-            .overlay-text h1 {
-                font-size: 1.8rem;
-            }
-
-            /* Content adjustments */
-            .content-section {
-                padding: 20px 5%;
-            }
-
-            .section-with-image {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .image-content {
-                margin-top: 20px !important;
-                max-width: 100% !important;
-            }
-
-            .torsion-section {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .text-half, .image-half {
-                width: 100%;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-                margin: 20px 0 15px;
-            }
-        }
     </style>
-</head>
-<body>
-       <!-- Header -->
-       <header class="garage-header">
-        <div class="garage-header__content-left">
+
+    <body>
+    <div class="overlay"></div>
+
+        <!-- Header -->
+        <header class="garage-header">
             <div class="garage-header__logo">
                 <a href="index.html">
-                <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img"></a>
-            </div>
-            <div class="garage-header__social">
-                <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
-                    <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
-                </a>
-                <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
-                    <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
-                    <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
-                </a>
-                <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
-                    <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
+                    <img src="orange_logo.png" alt="Company Logo" class="garage-header__logo-img">
                 </a>
             </div>
+            <nav class="garage-header__nav">
+                <button class="garage-header__mobile-btn" aria-label="Toggle navigation menu">
+                    <span class="garage-header__mobile-btn-bar"></span>
+                    <span class="garage-header__mobile-btn-bar"></span>
+                    <span class="garage-header__mobile-btn-bar"></span>
+                </button>
+                <ul class="garage-header__nav-list">
+                    <!-- Social Icons -->
+                    <div class="social-icons-group">
+                        <li class="garage-header__nav-item">
+                            <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" class="garage-header__nav-link" target="_blank">
+                                <img src="yelp.png" alt="Yelp" class="nav-social-icon">
+                            </a>
+                        </li>
+                        <li class="garage-header__nav-item">
+                            <a href="https://www.facebook.com/profile.php?id=61561423146575" class="garage-header__nav-link" target="_blank">
+                                <img src="2021_Facebook_icon.svg.png" alt="Facebook" class="nav-social-icon">
+                            </a>
+                        </li>
+                        <li class="garage-header__nav-item">
+                            <a href="https://www.angi.com" class="garage-header__nav-link" target="_blank">
+                                <img src="al.png" alt="Angi" class="nav-social-icon">
+                            </a>
+                        </li>
+                        <li class="garage-header__nav-item">
+                            <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" class="garage-header__nav-link" target="_blank">
+                                <img src="tt.png" alt="Thumbtack" class="nav-social-icon">
+                            </a>
+                        </li>
+                    </div>
+                    
+                    <!-- Navigation Items -->
+                    <div class="nav-items-group">
+                        <li class="garage-header__nav-item">
+                            <a href="#" class="garage-header__nav-link">Residential</a>
+                            <ul class="garage-header__dropdown">
+                                <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                                <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                                <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                                <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                                <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                            </ul>
+                        </li>
+                        <li class="garage-header__nav-item">
+                            <a href="#" class="garage-header__nav-link">Commercial</a>
+                            <ul class="garage-header__dropdown">
+                                <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                                <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                                <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                                <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                            </ul>
+                        </li>
+                        <li class="garage-header__nav-item">
+                            <a href="#" class="garage-header__nav-link">Areas Served</a>
+                            <ul class="garage-header__dropdown">
+                                <li class="garage-header__dropdown-item"><a href="houston.html" class="garage-header__dropdown-link">Houston</a></li>
+                                <li class="garage-header__dropdown-item"><a href="katy.html" class="garage-header__dropdown-link">Katy</a></li>
+                                <li class="garage-header__dropdown-item"><a href="pearland.html" class="garage-header__dropdown-link">Pearland</a></li>
+                                <li class="garage-header__dropdown-item"><a href="sugar.html" class="garage-header__dropdown-link">Sugar Land</a></li>
+                                <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                                <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                                <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                                <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                                <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                            </ul>
+                        </li>
+                        <li class="garage-header__nav-item">
+                            <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                            <ul class="garage-header__dropdown">
+                                <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                                <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                                <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                                <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                                <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                            </ul>
+                        </li>
+                    </div>
+         
+                    <!-- Phone -->
+                    <li class="garage-header__nav-item garage-header__phone">
+                        <a href="tel:281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+         </header>
+
+<div class="overlay"></div>
+<div class="booking-form-section">
+    <div class="booking-form-container">
+        <h2>Reach Out To Us</h2>
+        <p>Please fill out the form below and we'll get back to you shortly.</p>
+        <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_subject" value="New Commercial Door Service Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your commercial door service needs.">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code" required>
+            </div>
+            <div class="form-group">
+                <label for="request">Reason for Request</label>
+                <textarea id="request" name="request" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Upload Photo (optional)</label>
+                <input type="file" id="photo" name="attachment" accept="image/*" multiple>
+                <small>You can select multiple photos if needed</small>
+            </div>
+            <button type="submit" class="unique-submit-btn">Contact Us</button>
+        </form>
+    </div>
+</div>
+
+<div class="sub-header-container">
+    <div class="image-container">
+
+        <img src="springs3.jpg" alt="Garage Door" class="background-image">
+        <div class="partial-overlay">
+          <h2 class="heading-title">Garage Door Springs</h2>
         </div>
-    
-        <nav class="garage-header__nav">
-            <button class="garage-header__mobile-btn">
-                <span class="garage-header__mobile-btn-bar"></span>
-                <span class="garage-header__mobile-btn-bar"></span>
-                <span class="garage-header__mobile-btn-bar"></span>
-            </button>
-            <ul class="garage-header__nav-list">
-                <li class="garage-header__nav-item">
-                    <a href="#" class="garage-header__nav-link">Residential</a>
-                    <ul class="garage-header__dropdown">
-                        <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
-                        <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
-                        <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
-                        <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
-                        <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
-                    </ul>
-                </li>
-                <li class="garage-header__nav-item">
-                    <a href="#" class="garage-header__nav-link">Commercial</a>
-                    <ul class="garage-header__dropdown">
-                        <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
-                        <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
-                        <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
-                        <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
-                    </ul>
-                </li>
-                <li class="garage-header__nav-item">
-                    <a href="#" class="garage-header__nav-link">Areas Served</a>
-                    <ul class="garage-header__dropdown">
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Houston</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Katy</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Pearland</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
-                    </ul>
-                </li>
-                <li class="garage-header__nav-item">
-                    <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
-                    <ul class="garage-header__dropdown">
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
-                    </ul>
-                </li>
-                <li class="garage-header__nav-item garage-header__phone">
-                    <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-
-
-    <!-- Hero Section -->
-<!-- Hero Section -->
-<div class="springs-header">
-    <div class="springs-overlay-text">
-        <h1>Spring Replacement</h1>
-        <button class="springs-hero-btn" onclick="showContactForm()">Contact Us</button>
+        <button onclick="navigateToBooking()" class="unique-toggle-btn">Contact Us</button>
     </div>
 </div>
 
@@ -551,49 +483,46 @@
             </ul>
         </div>
         <div class="springs-image-content">
-            <img src="merged.jpg" alt="Garage Door Spring">
+            <img src="extension3.jpg" alt="Garage Door Spring" class="img-first">
         </div>
     </div>
 
     <div class="springs-section-with-image">
         <div class="springs-text-content">
             <h2>Risks To Not Getting Fixed Right Away</h2>
-            <p>Trying to open a door <u>even once with a broken spring can buckle the top panel (see image on right) </u>or seize up your garage motor, <u>turning a $400 job into a $2000+ job</u>. Telltale signs are your door only goes up about 6 inches and falls back down, or you head a really loud noise overnight. Look above the middle of your door for the spring. You should be able to see the cracked spring (photo in the header) but sometimes you can't because the spring is encased in a plastic tube called Torquemaster. This is tricky, and often results in permanent damage to the opener and the door. Call us if you have ay questions</p>
+            <p>Trying to open a door <strong>even once with a broken spring can buckle the top panel (see image on right) </strong>or seize up your garage motor, <strong>turning a $400 job into a $2000+ job</strong>. Telltale signs are your door only goes up about 6 inches and falls back down, or you head a really loud noise overnight. Look above the middle of your door for the spring. You should be able to see the cracked spring (photo in the header) but sometimes you can't because the spring is encased in a plastic tube called Torquemaster. This is tricky, and often results in permanent damage to the opener and the door. Call us if you have ay questions</p>
         </div>
         <div class="springs-image-content">
-            <img src="bent2.jpg" alt="Broken Spring Example">
+            <img src="bent2.jpg" alt="Broken Spring Example" class="img-second">
         </div>
     </div>
 
     <div class="springs-section-with-image">
         <div class="springs-text-content">
             <h2>Expert Garage Spring Replacement</h2>
-            <p>We are able to fix your springs same day, any day of the week. Our technicians have at least 10 years experience and have seen it all. There isn't a universal spring. They come in different lengths and thickness becuase the strength of the spring must be calculated to the weight of the door. We take the time to do the necesssary calculation. At the end of the day, you want the door to be <u>properly balanced, which means it is easy to lift, staying up without falling down, and comes down without slamming</u>.</p>
+            <p>We are able to fix your springs same day, any day of the week. Our technicians have at least 10 years experience and have seen it all. There isn't a universal spring. They come in different lengths and thickness becuase the strength of the spring must be calculated to the weight of the door. We take the time to do the necesssary calculation. At the end of the day, you want the door to be <strong>properly balanced, which means it is easy to lift, staying up without falling down, and comes down without slamming</strong>.</p>
         </div>
         <div class="springs-image-content">
-            <img src="bobby.jpg" alt="Expert Spring Repair">
+            <img src="bobby.jpg" alt="Expert Spring Repair" class="img-third">
         </div>
     </div>
 
-    <div class="springs-torsion-section">
-        <div class="springs-text-half">
+    <div class="springs-section-with-image">
+        <div class="springs-text-content">
             <h2>Torsion vs Extension</h2>
             <ul>
-                <li><u>Torsion system is the superior system. It is smoother because extension springs work independently while the torsion spring is a single unit</u>. Extension springs are dangerous when the snap, especially if safety cables haven't been installed to minimize damage when it fails.</li>
+                <li><strong>Torsion system is the superior system. It is smoother because extension springs work independently while the torsion spring is a single unit</strong>. Extension springs are dangerous when the snap, especially if safety cables haven't been installed to minimize damage when it fails.</li>
                 <li>Should I replace extension springs when they break? Yes if it is possible. It's a bit more expensive but torsion springs work better and are safer.</li>
                 <li>Can you always replace an extension spring with a torsion spring? Sometimes you can't. Older homes especially have low headroom that don't allow enough space for a torsion system.</li>
             </ul>
         </div>
-        <div class="springs-image-half">
-            <img src="torsion_complete.jpg" alt="Extension Spring Setup">
+        <div class="springs-image-content">
+            <img src="torsion_complete.jpg" alt="Extension Spring Setup" class="img-fourth">
         </div>
     </div>
 </div>
 
-    <script>
 
-    </script>
-<div id="footer-placeholder"></div>
-    <script src="script.js"></script>
-</body>
-</html>
+        <div id="footer-placeholder"></div>
+    </body>
+</head>

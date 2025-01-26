@@ -552,3 +552,374 @@ body {
       display: block;
   }
 }
+
+
+.garage-header {
+  width: 100%;
+  position: fixed;
+  height: 80px;
+  background: #ffa500;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Left content section */
+.garage-header__content-left {
+  display: flex;
+  align-items: center;
+}
+
+.garage-header__logo {
+  margin-right: 40px;
+}
+
+.garage-header__logo-img {
+  height: 50px;
+  margin-top: 10px;
+}
+
+.garage-header__social {
+  position: absolute;
+  left: 500px;  /* Adjust this value to increase space between logos */
+  white-space: nowrap;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.garage-header__social-icon {
+  display: inline;
+  height: 30px;
+  margin-right: 30px;  /* Increase from 15px */
+  vertical-align: middle;
+}
+
+.garage-header__social a {
+  text-decoration: none; /* Remove underlines on links */
+}
+/* Navigation */
+.garage-header__nav {
+  display: flex;
+  align-items: center;
+  float: right;
+  margin-right: 40px;  /* Increase from 60px to 160px */
+  position: static;
+  transform: none;
+  height: 80px;
+}
+
+.garage-header__nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.garage-header__nav-list.active {
+  display: flex !important;
+  flex-direction: column;
+  background: #ffa500;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 10px;
+}
+
+.garage-header__nav-item {
+  display: inline-block;
+  position: relative;
+  margin-left: -20px !important;  /* Increase from 20px */
+  font-weight: 600;
+  
+}
+
+.garage-header__nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown styles */
+.garage-header__dropdown {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  min-width: 200px;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.garage-header__nav-item:hover .garage-header__dropdown {
+  display: block;
+}
+
+.garage-header__dropdown-item {
+  list-style: none;
+}
+
+.garage-header__dropdown-link {
+  color: #000;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.garage-header__dropdown-link:hover {
+  color: #2563eb;
+}
+
+/* Phone button styles */
+.garage-header__phone .garage-header__nav-link {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.garage-header__phone .garage-header__nav-link:hover {
+  background-color: #0052a3;
+  color: #FFA500;
+}
+
+/* Mobile button styles */
+.garage-header__mobile-btn {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  
+}
+
+.garage-header__mobile-btn-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Show nav items when the hamburger button is toggled */
+.garage-header__mobile-btn:checked + .garage-header__nav-list {
+  display: flex !important; /* Make nav items visible */
+  flex-direction: column; /* Stack nav items vertically */
+  background-color: #ffa500; /* Match header background */
+  position: absolute;
+  top: 80px;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 10px;
+  gap: 10px; /* Optional: Add spacing between items */
+}
+
+@media (max-width: 1201px) {
+
+.garage-header_nav-list {
+  display: none;
+}
+
+.garage-header__mobile-btn {
+      display: block; /* Show the hamburger button */
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+ }
+
+ .garage-header__mobile-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #000; /* Hamburger bar color */
+}
+}
+
+.garage-header__nav-list {
+  display: flex !important; /* Hides the nav menu */
+}
+
+
+
+
+
+/* For tablets - 768px to 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .garage-header__nav-list {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: #ffa500;
+      padding: 20px;
+      z-index: 1000;  /* Make sure it's on top */
+  }
+
+  .garage-header__social {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+      margin-top: -12px;
+      padding: 0;
+  }
+     
+  .garage-header__mobile-btn {
+      display: block;
+  }
+
+  .garage-header__mobile-btn.active {
+      background-color: #333; /* Optional styling for active state */
+  }
+
+  .garage-header__nav-list.active {
+      display: flex !important;
+      
+  }
+
+  .garage-header__nav-item {
+      width: 100%;
+      margin: px 0;
+      text-align: center;
+  }
+}
+
+
+
+
+
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .garage-header__mobile-btn {
+      display: block;
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 9999;
+     
+  }
+  
+  .garage-header__mobile-btn-bar {
+      width: 25px;
+      height: 3px;
+      margin: 5px 0;
+      background-color: #000; /* Black bars for visibility */
+  }
+
+  .garage-header__nav-list {
+      display: none;
+      flex-direction: column;
+      background: #ffa500;
+      padding: 10px;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      gap: 1px !important;
+  }
+
+  .garage-header__nav-list.active {
+      display: flex;
+  }
+
+  .garage-header__nav-item {
+      margin-left: 10px !important; /* Reduced margin to bring nav items closer */
+      padding: 0 5px !important; /* Optional: Adjust padding inside items */
+  }
+
+  .garage-header__dropdown {
+      position: static;
+      transform: none;
+      width: 100%;
+      margin-top: 10px;
+      display: none;
+  }
+
+  .garage-header__nav-item.active .garage-header__dropdown {
+      display: block;
+  }
+
+  .garage-header__logo {
+      position: absolute;
+      left: 20px;
+      margin-left: 0;
+  }
+
+  .garage-header__logo-img {
+      height: 35px;
+  }
+
+  .garage-header__social {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 15px;
+  }
+
+
+  .garage-header__social-icon {
+      height: 30px;
+      margin-right: 0;
+  }
+  
+  .garage-header__phone {
+      margin-top: 10px;
+  }
+
+  .garage-header__phone .garage-header__nav-link {
+      margin: 0;
+  }
+
+  /* Hamburger animation */
+  .garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  .garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(2) {
+      opacity: 0;
+  }
+
+  .garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .garage-header__social {
+      display: none;
+  }
+
+  .garage-header__logo {
+      margin-right: 0;
+  }
+}
+

@@ -281,7 +281,7 @@ function initializeNavigation() {
 
     if (mobileBtn && navList) {
         // Reset the display style based on window width
-        navList.style.display = window.innerWidth <= 1024 ? 'none' : 'flex';
+        navList.style.display = window.innerWidth <= 1094 ? 'none' : 'flex';
         
         mobileBtn.addEventListener('click', function(e) {
             e.preventDefault(); // Prevent any default button behavior
@@ -299,7 +299,7 @@ function initializeNavigation() {
 
         // Handle window resize
         window.addEventListener('resize', function() {
-            navList.style.display = window.innerWidth <= 1024 ? 'none' : 'flex';
+            navList.style.display = window.innerWidth <= 1200 ? 'none' : 'flex';
         });
 
         isInitialized = true;

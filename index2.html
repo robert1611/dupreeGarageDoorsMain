@@ -445,3 +445,421 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet/Mobile Navigation */
+@media screen and (max-width: 1093px) {
+    /* Main hamburger button & nav list styling */
+
+    .garage-header {
+        /*height: auto;  Allow content flow */
+        height: 120px;
+    }
+    
+    .garage-header__mobile-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+    }
+
+    .garage-header__nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        position: fixed;
+        top: 120px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 1001;
+        
+    }
+
+    .garage-header__nav-list.active {
+        display: flex !important;
+        position: absolute;
+        width: 100%;
+        top: 120px;
+        left: 0;
+        text-align: center;;
+    }
+
+    .garage-header__dropdown {
+        background: none;
+        box-shadow: none;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        transform: none;
+        margin: 0;
+        width: 100%;
+        padding: 15px, 0;
+        min-height: auto;
+        z-index: 101;
+        position: static !important;
+        display: none;
+    }
+     .garage-header__dropdown-link {
+        padding: 8px 15px;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .garage-header__dropdown-link:hover {
+        background-color: #ffa500;
+        color: #2563eb;
+    }
+    .garage-header__nav-item {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+    }
+
+
+    /* Stack the navigation items */
+    .nav-items-group {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 5px !important;  /* Remove gap between items */
+        padding: 0 !important;
+        margin: 0 !important;
+        background: white !important;
+        display: flex !important;
+        text-align: center;
+    }
+
+    .garage-header__nav-item .garage-header__dropdown {
+        display: none;
+    }
+
+    .garage-header__nav-item:hover .garage-header__dropdown {
+        display: flex;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 10px 0;
+        position: static;
+    }
+    .garage-header__nav-item > .garage-header__nav-link {
+            display: block !important;
+            background: white;
+            color: black;
+            text-align: left;
+            font-size: 16px;
+            padding: 10px 15px;
+    }
+    
+    .garage-header__nav .nav-items-group {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .garage-header__nav .garage-header__nav-link {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .garage-header__nav-link {
+        display: block;
+        background: none;
+        z-index: 1002;
+        position: relative;
+        z-index: 1002;
+        color: black !important;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        height: auto;
+        justify-content: center;
+    }
+
+    .nav-social-icon {
+        height: 20px;
+        
+        
+    }
+    /* Social icons in a row */
+    .social-icons-group {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        order: 3;
+        padding: 15px 0;
+        border-top: 1px solid #eee;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Phone number positioning */
+    .garage-header__phone {
+        order: 2;
+        margin: 20px 0;
+        height: 100px !important;
+        display: block;
+       text-align: center;
+    }
+
+}
+ 
+ /* Mobile styles 
+ @media screen and (max-width: 768px) {
+    .garage-header__mobile-btn {
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+    }
+    
+    .garage-header__mobile-btn-bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: #000;
+    }
+ 
+    .garage-header__nav-list {
+        display: none;
+        flex-direction: column;
+        background: #ffa500;
+        padding: 20px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
+ 
+    .garage-header__nav-list.active {
+        display: flex;
+    }
+ 
+    .garage-header__nav-item {
+        display: block;
+        text-align: center;
+        margin: 15px 0;
+    }
+ 
+    .garage-header__dropdown {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
+        display: none;
+    }
+ 
+    .garage-header__nav-item.active .garage-header__dropdown {
+        display: block;
+    }
+ 
+    .garage-header__logo {
+        position: absolute;
+        left: 20px;
+        margin-left: 0;
+    }
+ 
+    .garage-header__logo-img {
+        height: 35px;
+    }
+ 
+    .garage-header__social {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0;
+    }
+ 
+    .garage-header__social-icon {
+        height: 20px;
+        margin-right: 10px;
+    }
+    
+    .garage-header__phone {
+        margin-top: 10px;
+    }
+ 
+    .garage-header__phone .garage-header__nav-link {
+        margin: 0;
+    }
+ 
+    /
+    .garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+ 
+    .garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(2) {
+        opacity: 0;
+    }
+ 
+    .garage-header__mobile-btn.active .garage-header__mobile-btn-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+ }
+ 
+ @media screen and (max-width: 480px) {
+    .garage-header__social {
+        display: none;
+    }
+ 
+    .garage-header__logo {
+        margin-right: 0;
+    }
+ }
+ 
+ /* Touch device optimization
+ @media (hover: none) {
+    .garage-header__nav-item:hover .garage-header__dropdown {
+        display: none;
+    }
+ 
+    .garage-header__nav-item.touch-active .garage-header__dropdown {
+        display: block;
+    }
+ }
+ 
+ /* High DPI screens 
+ @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .garage-header {
+        border-bottom: 0.5px solid rgba(0,0,0,0.1);
+    }
+ }
+ 
+ /* Print styles 
+ @media print {
+    .garage-header {
+        position: static;
+        box-shadow: none;
+    }
+ 
+    .garage-header__nav,
+    .garage-header__mobile-btn {
+        display: none;
+    }
+ }
+ 
+ /* Accessibility 
+ @media (prefers-reduced-motion: reduce) {
+    .garage-header__nav-link,
+    .garage-header__dropdown,
+    .garage-header__mobile-btn-bar {
+        transition: none;
+    }
+ 
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+ }
+ 
+ /* Focus styles 
+ .garage-header__nav-link:focus,
+ .garage-header__dropdown-link:focus,
+ .garage-header__mobile-btn:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: -2px;
+ }
+ 
+ .garage-header__mobile-btn:focus {
+    outline-offset: 2px;
+ }
+
+
+/* Code for Build Yourr Door */
+
+
+
+
+
+
+
+
+
+
+
+<!-- Main container
+<div class="page-layout">
+    <!-- Design section -->
+    <section class="design-section">
+        <div class="design-container">
+            <!-- Heading -->
+           c <h2 class="design-heading">Design Your Garage Door</h2>
+
+            <!-- CHI Logo -->
+            <img src="CHI-logo.jpg" alt="CHI Garage Doors Logo" class="design-logo">
+
+            <!-- Bullet Points -->
+            <ul class="design-bullets">
+                <li>Create a garage door that fits your style and needs. Choose from a variety of materials, colors, and hardware to craft the perfect look for your home or business.</li>
+                <li>Use the CHI Garage Doors design tool to visualize your customizations in real-time and make adjustments before committing to your design.</li>
+            </ul>
+
+            <!-- Button -->
+            <a href="https://doorvisions.chiohd.com/" class="design-button">Build Your Garage Door</a>
+        </div>
+    </section>
+
+    <!-- Right Column -->
+    <div class="custom-form-box">
+        <h3 class="custom-form-title">Request Service</h3>
+        <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" class="custom-form">
+            <div class="custom-form-group">
+                <label for="name" class="custom-form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="custom-form-input" required>
+            </div>
+
+            <div class="custom-form-group">
+                <label for="phone" class="custom-form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="custom-form-input" required>
+            </div>
+
+            <div class="custom-form-group">
+                <label for="email" class="custom-form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="custom-form-input" required>
+            </div>
+
+            <div class="custom-form-group">
+                <label for="address" class="custom-form-label">Physical Address</label>
+                <input type="text" id="address" name="address" class="custom-form-input" required>
+            </div>
+
+            <div class="custom-form-group">
+                <label for="zipcode" class="custom-form-label">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" class="custom-form-input" required pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code">
+            </div>
+
+            <div class="custom-form-group">
+                <label for="description" class="custom-form-label">How Can We Help?</label>
+                <textarea id="description" name="message" rows="4" class="custom-form-textarea" required></textarea>
+            </div>
+
+            <div class="custom-form-group">
+                <label for="photos" class="custom-form-label">Upload Photos (optional)</label>
+                <input type="file" id="photos" name="attachment" class="custom-form-upload" accept="image/*" multiple>
+                <small class="custom-form-help-text">You can select multiple photos</small>
+            </div>
+
+            <button type="submit" class="custom-submit-btn">Submit Request</button>
+        </form>
+    </div>

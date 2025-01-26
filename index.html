@@ -8,6 +8,99 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+/* Container Styles */
+.custom-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9; /* Light gray background for the form section */
+}
+
+.custom-form-box {
+    border: 2px solid #ccc; /* Add a border around the form */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Title Styles */
+.custom-form-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333; /* Darker text color */
+}
+
+/* Form Group */
+.custom-form-group {
+    margin-bottom: 15px;
+}
+
+/* Input and Textarea Fields */
+.custom-form-input,
+.custom-form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #fff; /* Ensure background stays white */
+    color: #333; /* Text color */
+}
+
+.custom-form-textarea {
+    resize: none; /* Prevent resizing */
+}
+
+/* File Upload Field */
+.custom-form-upload {
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* Help Text */
+.custom-form-help-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.875rem;
+    color: #6c757d; /* Muted gray */
+}
+
+/* Submit Button */
+.custom-submit-btn {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.custom-submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+
+    </style>
+
+
+
 </head>
 <body>
  <!--HERO SECTION-->
@@ -16,8 +109,8 @@
         <div class="new-overlay"></div>   
         <div class="content-container">
             
-            <h1>Fast, Reliable Garage Door Company Servicing Greater Houston</h1>
-            <h2>Available 24/7 for Repairs, Installations, and Maintenance. Your Trusted Local Experts.</h2>
+            <h1>Fast,, Reliable Garage Door Company Servicing Greater Houston</h1>
+            
             <button class="book-now-btn" onclick="navigateToBooking()">Contact Us</button>
         </div>
         <div class="overlay"></div>
@@ -49,77 +142,99 @@
     <!-- Header -->
 
 <header class="garage-header">
-    <div class="garage-header__content-left">
-        <div class="garage-header__logo">
-            <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img">
-        </div>
-        <div class="garage-header__social">
-            <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
-                <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
-            </a>
-            <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
-                <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
-                <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
-            </a>
-            <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
-                <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
-            </a>
-        </div>
-    </div>
+   <div class="garage-header__logo">
+       <a href="index.html">
+           <img src="orange_logo.png" alt="Company Logo" class="garage-header__logo-img">
+       </a>
+   </div>
+   <nav class="garage-header__nav">
+       <button class="garage-header__mobile-btn" aria-label="Toggle navigation menu">
+           <span class="garage-header__mobile-btn-bar"></span>
+           <span class="garage-header__mobile-btn-bar"></span>
+           <span class="garage-header__mobile-btn-bar"></span>
+       </button>
+       <ul class="garage-header__nav-list">
+           <!-- Social Icons -->
+           <div class="social-icons-group">
+               <li class="garage-header__nav-item">
+                   <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" class="garage-header__nav-link" target="_blank">
+                       <img src="yelp.png" alt="Yelp" class="nav-social-icon">
+                   </a>
+               </li>
+               <li class="garage-header__nav-item">
+                   <a href="https://www.facebook.com/profile.php?id=61561423146575" class="garage-header__nav-link" target="_blank">
+                       <img src="2021_Facebook_icon.svg.png" alt="Facebook" class="nav-social-icon">
+                   </a>
+               </li>
+               <li class="garage-header__nav-item">
+                   <a href="https://www.angi.com" class="garage-header__nav-link" target="_blank">
+                       <img src="al.png" alt="Angi" class="nav-social-icon">
+                   </a>
+               </li>
+               <li class="garage-header__nav-item">
+                   <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" class="garage-header__nav-link" target="_blank">
+                       <img src="tt.png" alt="Thumbtack" class="nav-social-icon">
+                   </a>
+               </li>
+           </div>
+           
+           <!-- Navigation Items -->
+           <div class="nav-items-group">
+               <li class="garage-header__nav-item">
+                   <a href="#" class="garage-header__nav-link">Residential</a>
+                   <ul class="garage-header__dropdown">
+                       <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                       <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                       <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                       <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                       <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                   </ul>
+               </li>
+               <li class="garage-header__nav-item">
+                   <a href="#" class="garage-header__nav-link">Commercial</a>
+                   <ul class="garage-header__dropdown">
+                       <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                       <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                       <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                       <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                   </ul>
+               </li>
+               <li class="garage-header__nav-item">
+                   <a href="#" class="garage-header__nav-link">Areas Served</a>
+                   <ul class="garage-header__dropdown">
+                       <li class="garage-header__dropdown-item"><a href="houston.html" class="garage-header__dropdown-link">Houston</a></li>
+                       <li class="garage-header__dropdown-item"><a href="katy.html" class="garage-header__dropdown-link">Katy</a></li>
+                       <li class="garage-header__dropdown-item"><a href="pearland.html" class="garage-header__dropdown-link">Pearland</a></li>
+                       <li class="garage-header__dropdown-item"><a href="sugar.html" class="garage-header__dropdown-link">Sugar Land</a></li>
+                       <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                       <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                       <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                       <li class="garage-header__dropdown-item"><a href="sugar.html" class="garage-header__dropdown-link">Sugar Land</a></li>
+                       <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                       <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                   </ul>
+               </li>
+               <li class="garage-header__nav-item">
+                   <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                   <ul class="garage-header__dropdown">
+                       <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                       <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                       <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                       <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                       <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                   </ul>
+               </li>
+           </div>
 
-    <nav class="garage-header__nav">
-        <ul class="garage-header__nav-list">
-            <li class="garage-header__nav-item">
-                <a href="#" class="garage-header__nav-link">Residential</a>
-                <ul class="garage-header__dropdown">
-                    <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
-                    <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
-                    <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
-                    <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
-                    <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
-                </ul>
-            </li>
-            <li class="garage-header__nav-item">
-                <a href="#" class="garage-header__nav-link">Commercial</a>
-                <ul class="garage-header__dropdown">
-                    <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
-                    <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
-                    <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
-                    <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
-                </ul>
-            </li>
-            <li class="garage-header__nav-item">
-                <a href="#" class="garage-header__nav-link">Areas Served</a>
-                <ul class="garage-header__dropdown">
-                    <li class="garage-header__dropdown-item"><a href="houston.html" class="garage-header__dropdown-link">Houston</a></li>
-                    <li class="garage-header__dropdown-item"><a href="katy.html" class="garage-header__dropdown-link">Katy</a></li>
-                    <li class="garage-header__dropdown-item"><a href="pearland.html" class="garage-header__dropdown-link">Pearland</a></li>
-                    <li class="garage-header__dropdown-item"><a href="sugar.html" class="garage-header__dropdown-link">Sugar Land</a></li>
-                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
-                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
-                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
-                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
-                    <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
-                </ul>
-            </li>
-            <li class="garage-header__nav-item">
-                <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
-                <ul class="garage-header__dropdown">
-                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
-                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
-                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
-                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
-                    <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
-                </ul>
-            </li>
-            <li class="garage-header__nav-item garage-header__phone">
-                <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
-            </li>
-        </ul>
-    </nav>
+           <!-- Phone -->
+           <li class="garage-header__nav-item garage-header__phone">
+               <a href="tel:281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+           </li>
+       </ul>
+   </nav>
+   <div class="overlay"></div>
 </header>
+    
 
 <!-- Services Section -->
 <section class="services-section">
@@ -180,7 +295,7 @@
         <p>We're thrilled to have you here! At Dupree Garage Doors, we specialize in providing top-quality garage door repair, installation, and maintenance services to keep your home or business safe and functional. With years of experience and a dedication to customer satisfaction, we’re here to make your garage door troubles a thing of the past.</p>
             <br>
             <p>💪 What We Offer: </p>
-            
+        <ul>
             <li>✔️ Fast and reliable garage door repairs</li>
             <li>✔️ Professional installation of residential and commercial garage doors</li>
             <li>✔️ Routine maintenance to extend the life of your doors</li>
@@ -191,117 +306,73 @@
             <li>⏱️ Quick response times</li>
             <li>💰 Affordable pricing without compromising quality</li>
             <li>🤝 Customer-first approach</li>
-        
+        </ul>
     
     
     
     
     </div>
+    <div class="custom-form-box">
+        <h3 class="custom-form-title">Request Service</h3>
+        <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" class="custom-form">
+            <div class="custom-form-group">
+                <label for="name" class="custom-form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="custom-form-input" required>
+            </div>
 
-    
+            <div class="custom-form-group">
+                <label for="phone" class="custom-form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="custom-form-input" required>
+            </div>
 
-    <!-- Right Column -->
-    <div class="form-column">
-        <h3>Request Service</h3>
-        <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST">
-            <!-- Optional FormSubmit features -->
-            <input type="hidden" name="_subject" value="New Garage Door Service Request">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your garage door service needs.">
-    
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+            <div class="custom-form-group">
+                <label for="email" class="custom-form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="custom-form-input" required>
             </div>
-    
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
+
+            <div class="custom-form-group">
+                <label for="address" class="custom-form-label">Physical Address</label>
+                <input type="text" id="address" name="address" class="custom-form-input" required>
             </div>
-    
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+
+            <div class="custom-form-group">
+                <label for="zipcode" class="custom-form-label">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" class="custom-form-input" required pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code">
             </div>
-    
-            <div class="form-group">
-                <label for="address">Physical Address</label>
-                <input type="text" id="address" name="address" required>
+
+            <div class="custom-form-group">
+                <label for="description" class="custom-form-label">How Can We Help?</label>
+                <textarea id="description" name="message" rows="4" class="custom-form-textarea" required></textarea>
             </div>
-    
-            <div class="form-group">
-                <label for="zipcode">Zip Code</label>
-                <input type="text" id="zipcode" name="zipcode" required pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code">
+
+            <div class="custom-form-group">
+                <label for="photos" class="custom-form-label">Upload Photos (optional)</label>
+                <input type="file" id="photos" name="attachment" class="custom-form-upload" accept="image/*" multiple>
+                <small class="custom-form-help-text">You can select multiple photos</small>
             </div>
-    
-            <div class="form-group">
-                <label for="description">How Can We Help?</label>
-                <textarea id="description" name="message" rows="4" required></textarea>
-            </div>
-    
-            <div class="form-group">
-                <label for="photos">Upload Photos (optional)</label>
-                <input type="file" id="photos" name="attachment" accept="image/*" multiple>
-                <small>You can select multiple photos</small>
-            </div>
-    
-            <button type="submit" class="submit-btn">Submit Request</button>
+
+            <button type="submit" class="custom-submit-btn">Submit Request</button>
         </form>
     </div>
 </div>
+    
+</div>
 
-<!-- Map Feature -->
-
-<!-- HTML: Add this to the section where you want the map -->
-<!-- Map Container -->
-
-
-<!-- Code for Personal Bio  -->
+</div>
 
 
+<!-- Google Maps API Script   AIzaSyDXyT4zQh6a0KGO-wi5ULYOORe1VuasJ-4  -->
 
-<!-- Google Maps API Script   AIzaSyDXyT4zQh6a0KGO-wi5ULYOORe1VuasJ-4 
 
-<!-Wrap everything in map-info-container --> 
 
-<!-- Wrap everything in map-info-container -->
 <div class="map-info-container">
-    <!-- Left side - Map -->
+
     <div class="map-container">
         <div id="service-area-map"></div>
     </div>
 
-    <!-- Right side - Info Panel -->
-    <div class="info-panel">
-        <div class="contact-details">
-            <!-- Hours -->
-            <div class="info-item">
-                <i class="far fa-clock"></i>
-                <div class="info-text">
-                    <h3>24/7 Emergency Service</h3>
-                    
-                </div>
-            </div>
-            
-            <!-- Location -->
-            <div class="info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="info-text">
-                    <h3>3612 Mangum Street Unit 103, Houston, TX 77092</h3>
-                    
-                </div>
-            </div>
-            
-            <!-- Phone -->
-            <div class="info-item">
-                <i class="fas fa-phone"></i>
-                <div class="info-text">
-                    <h3><a href="tel:281-924-7000">281-924-7000</a>
-                    
-                </div>
-            </div>
-        </div>
 
+    <div class="info-panel">
         <div class="service-areas">
             <h3>Areas We Serve</h3>
             <ul>
@@ -341,12 +412,12 @@
     </div>
 </div>
 
-<!-- Scripts can go here -->
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXyT4zQh6a0KGO-wi5ULYOORe1VuasJ-4&callback=initMap" async defer></script>
 <script src="script.js" defer></script>
 
 
-<!-- Testimonial Section-->
+
 
 <section class="testimonials">
     <div class="testimonials-container">
@@ -407,7 +478,7 @@
 
 <footer class="footer">
     <div class="footer-container">
-        <!-- Company Info -->
+    
         <div class="footer-section">
             <h4>Follow Us</h4>
             <div class="footer-social">
@@ -496,81 +567,6 @@ body {
 <script>
 
 // Create a new file named 'script.js' and add this code:
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Create mobile menu button programmatically
-    const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.className = 'mobile-menu-btn';
-    mobileMenuBtn.innerHTML = `
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    `;
-    
-    // Insert mobile menu button before nav menu
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.parentNode.insertBefore(mobileMenuBtn, navMenu);
-
-    const navList = document.querySelector('.nav-list');
-    
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navList.classList.toggle('active');
-        this.classList.toggle('active');
-    });
-
-    // Handle dropdowns in mobile view
-    const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-    
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('.nav-link');
-        
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                // Toggle active class for the current dropdown
-                const isCurrentlyActive = dropdown.classList.contains('active');
-                
-                // Close all dropdowns
-                dropdowns.forEach(d => d.classList.remove('active'));
-                
-                // If the clicked dropdown wasn't active, open it
-                if (!isCurrentlyActive) {
-                    dropdown.classList.add('active');
-                }
-            }
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInside = navMenu.contains(event.target) || mobileMenuBtn.contains(event.target);
-        if (!isClickInside) {
-            navList.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-            dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
-        }
-    });
-
-    // Handle window resize
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-            if (window.innerWidth > 768) {
-                // Reset mobile menu states
-                navList.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
-                dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
-            }
-        }, 250);
-    });
-});
-
-
 
 </script>
 

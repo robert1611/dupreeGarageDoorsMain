@@ -4,575 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commercial Storefront Repair</title>
-    <link rel="stylesheet" href="styles.css" />
+    
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
 
-        body {
-            background-color: #f4f4f4;
-            line-height: 1.6;
-            
-        }
-
-        /* Section Styling */
-        .storefront-repair {
-            background-color: #fff;
-            padding: 40px 20px;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 1200px;
-        }
-
-        .storefront-issues {
-            padding: 4rem 2rem;
-            background-color: #fff;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .storefront-repair h2 {
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-
-        .storefront-repair p {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .repair-types {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .repair-type {
-            background-color: #f9f9f9;
-            padding: 20px;
-            flex: 1 1 calc(33.33% - 20px);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .repair-type:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .repair-type h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .repair-type p {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .learn-more {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #ffa500;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-
-        .learn-more:hover {
-            background-color: #e69500;
-        }
-
-        /*Hero CSS*/
-
-        
-    /* Scoped styles just for this hero section */
-        .hero-section {
-            position: relative;
-            width: 100%;
-            height: 80vh;
-            min-height: 500px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('cover_repair.jpg'); /* Add your image file here */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 1;
-        }
-
-        .solutions-list {
-            list-style-type: disc; /* Standard bullet points */
-            padding-left: 40px; /* Aligns bullets with leftmost text */
-            margin-top: 10px; /* Space after heading */
-        }
-
-        .solutions-list h2 {
-            color: white;
-            font-size: 1.5rem;
-            margin: 8px 0; /* Reduced space between items */
-        }
-
-
-
-        h1 {
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .hero-section ul {
-            list-style-type: disc;
-            padding-left: 40px;
-            margin-top: 10px;
-            line-height: 0.4;
-        }
-
-        .hero.section li h2 {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0;
-            padding: 0;
-            line-height: 0.6;
-
-        }
-
-        li {
-            padding: 0;
-            margin: 0;
-        }
-
-    
-
-
-        .intro-container {
-            max-width: 800px;
-            margin: 0 0 3rem 0;
-            padding-left: 0;
-        }
-
-        .intro-container h2 {
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .intro-container p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-
-.info-card {
-    flex: 1 1 400px;
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-}
-
-.info-card h3 {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.info-card p {
-    color: #555;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.info-card ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    color: #555;
-}
-
-.info-card li {
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-
-.info-section {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    align-items: center;
-}
-
-.info-box {
-    flex: 0 1 60%;
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.image-box {
-    flex: 0 1 40%;
-    height: 325px;
-}
-
-.image-box img {
+/* General form container styles */
+.form-column {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.info-box h3 {
+h3 {
+    text-align: center;
+    font-size: 1.8rem;
     color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
-.info-box p {
-    color: #555;
-    margin-bottom: 1rem;
-    line-height: 1.6;
+/* Form elements */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-.info-box ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    color: #555;
+.form-group {
+    margin-bottom: 15px;
 }
 
-.info-box li {
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
+label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
-    .info-container {
-        flex-direction: column;
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Small text under form elements */
+small {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Submit button styling */
+.submit-btn {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.submit-btn:active {
+    background-color: #388e3c;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .form-column {
+        padding: 15px;
     }
-    
-    .info-card {
-        flex: 1 1 100%;
+
+    h3 {
+        font-size: 1.6rem;
     }
 
-    .info-section {
-        flex-direction: column;
+    input, textarea {
+        font-size: 0.95rem;
     }
-    
-    .info-box, .image-box {
-        flex: 1 1 100%;
+
+    .submit-btn {
+        font-size: 1rem;
     }
-    }
-     
-         /* Header styles */
-         .site-header {
-            width: 100vw;
-            background-color: #ffa500;
-            color: white;
-            line-height: 1.6; /* Normal line height for header */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            margin: 0;
-            padding: 0;
-        }
-
-        .header-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .flex.items-center.space-x-6 {
-            gap: 1.5rem; /* Adds space between phone number and button */
-        }
-
-        .content-container h1 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .content-container h2 {
-            color: white;
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-button {
-            background-color: #2563eb;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-button:hover {
-            background-color: #1d4ed8;
-        }
+}
 
 
     </style>
 </head>
+     
 <body>
 
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="logo_orange.png" alt="Company Logo">
+    <div class="form-column">
+        <h3>Request Service</h3>
+        <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST">
+            <!-- Optional FormSubmit features -->
+            <input type="hidden" name="_subject" value="New Garage Door Service Request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Thank you for your request. We'll contact you shortly about your garage door service needs.">
+    
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
-            
-            <nav class="nav-menu">
-                <button class="mobile-menu-btn">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-                
-                <ul class="nav-list">
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Residential</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="Springs.html">Garage Door Springs</a></li>
-                            <li><a href="door.html">Garage Doors</a></li>
-                            <li><a href="Openers.html">Openers</a></li>
-                            <li><a href="QuietDoor.html">Quiet Door Upgrade</a></li>
-                            <li><a href="build_your_door.html">Design Your Garage Door</a></li>
-                          
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Commercial</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="repairs.html">Service Work</a></li>
-                            <li><a href="#">New Installs</a></li>
-                            <li><a href="repairs.html">Hollow Metal Door</a></li>
-                            <li><a href="#">Storefront</a></li>
-                            <li><a href="#">Partner With Us</a></li>
     
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Areas Served</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Houston</a></li>
-                            <li><a href="#">Katy</a></li>
-                            <li><a href="#">Pearland</a></li>
-                            <li><a href="#">Bellaire</a></li>
-                            <li><a href="#">Cypress</a></li>
-                            <li><a href="#">Cinco Ranch</a></li>
-                            <li><a href="#">Sugar Land</a></li>
-                            <li><a href="#">Missouri City</a></li>
-                            <li><a href="#">Memorial</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                        <a href="FAQs.html" class="nav-link">FAQs</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="FAQs.html">Should I DIY Broken Springs</a></li>
-                            <li><a href="FAQs.html">How do I Maintain My Garage Door</a></li>
-                            <li><a href="FAQs.html">Expected Life Of Garage Door Opener</a></li>
-                            <li><a href="FAQs.html">Why is My Garage Door So Heavy</a></li>
-                            <li><a href="FAQs.html">How Can I Make My Garage Door Quieter</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item phone">
-                        <a href="tel:346-493-3487" class="nav-link">Call Us</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
- <!--HERO SECTION-->
- <section class="hero-section">
-    <div class="hero-image"></div>
-    <div class="new-overlay"></div>   
-    <div class="content-container">
-        
-        <h1>Commercial Door Repairs</h1>
-        <ul>
-            <li><h2>Springs</h2></li>
-            <li><h2>Off-Track Doors</h2></li>
-            <li><h2>Rollers</h2></li>
-            <li><h2>Tracks and Hinges</h2></li>
-            <li><h2>Chain Hoists</h2></li>
-            
-
-        </ul>
-        
-        <button class="book-now-btn" onclick="navigateToBooking()">BOOK NOW</button>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="address">Physical Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" required pattern="[0-9]{5}" title="Please enter a valid 5-digit zip code">
+            </div>
+    
+            <div class="form-group">
+                <label for="description">How Can We Help?</label>
+                <textarea id="description" name="message" rows="4" required></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="photos">Upload Photos (optional)</label>
+                <input type="file" id="photos" name="attachment" accept="image/*" multiple>
+                <small>You can select multiple photos</small>
+            </div>
+    
+            <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
     </div>
-    <div class="overlay"></div>
-    <div class="booking-form-section" id="bookingForm">
-        <div class="form-container">
-            <h2>Book Your Appointment</h2>
-            <p>Please fill out the form below and we'll get back to you shortly.</p>
-            <form id="bookingFormElement" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <button type="submit" class="submit-btn">Submit Booking</button>
-            </form>
-        </div>
-    </div>
-</section>
 
-<section class="storefront-issues">
     
 
-
-    <!--  Commercial Spring Replacement -->
-    <div class="info-section">
-        <div class="info-box">
-            <h3>Commercial Springs have a longer life than residential springs, but they will eventually fail.  We are experts in figuring out the correct springs needed.</h3>
-
-            </p>
-            <ul>
-                <li><strong>No Way Unless You Weight It</strong>.  It isn't a simple as replacing the broken spring with a new one of the exact same size. Doors usually have weight addeed to them over time. Most often reinforcement struts.  To know for sure,  you take the tension off, weigh it, and calculate springs needed by also taking in to account the door's height, width, drums and track radius.</li>
-                <li>We perform a complete audit of the door and the torsion system.  This means inspecting bearing plates, cables, hinges and the torsion shaft</li>
-                <li>On about half of the commercial doors we look at, we find some <strong>residential parts being used.  This is dangerous</strong> as commercial garage doors are heavier and under more stress.</li>
-                <li>We source all of our commercial springs from CHI</li>
-            
-            </ul>
-        </div>
-        <div class="image-box">
-            <img src="comm_springs.jpg" alt="Broken Commercial Garage Door Spring">
-        </div>
-    </div>
-
-    <!-- Off Track Commercial -->
-    <div class="info-section">
-        <div class="info-box">
-            <h3>Off-Track Commercial Garage Doors</h3>
-            <p>Lots of people are handling your garage doors.  From employees, to contractors, to delivery personnel.  This create a highly likelihood of the door coming down on something.
-            </p>
-            <ul>
-                <li>When a door has a cable side, the tension doubles up on the other side.  This creates a very dangerous situation is someone decides to take a bracket off.</li>
-                <li>We are able to quickly resolve these issues by using winches and jacks.  This save you money since most commercial is billed by the labor hour.  
-                <li>Once we get the cable reset, we will take the time to figure out what caused it and address it right then and there.  Seems obvious, but most companies would rather get called back multiple times to address the same issue</li>
-               
-            </ul>
-        </div>
-        <div class="image-box">
-            <img src="scissor.jpg" alt="Off track commercial door">
-        </div>
-    </div>
-
-    <!-- Rollers -->
-    <div class="info-section">
-        <div class="info-box">
-            <h3>Rollers</h3>
-            <p>It seems obvious, but rollers cause a lot of problems even though they are a simple and relatively easy fix.</p>
-            <ul>
-                <li>Rollers are like the tires on your car.  They take a lot of abuse and wear out relatively quickly.  Worn out rollers create extra stress on the whole system.</li>
-                <li>Unlike residential, steel rollers are as good an option as nylon rollers. The important thing is that rollers have ball bearings.</li>
-                <li>Rollers will also quiet down a garage door</li>
-            </ul>
-        </div>
-        <div class="image-box">
-            <img src="rollers2.jpg" alt="Rollup repair near me">
-        </div>
-    </div>+
-+
     
-    <!-- Commercial Tracks and Hinges -->
-    <div class="info-section">
-        <div class="info-box">
-            <h3>Comm+++ercial Tracks and Hinges</h3>
-            <p> Commercial tracks are much sturdier than residential tracks.  The have a reverse angle design which allows you to screw directly into the track, as opposed to a jamb bracket.</p>
-            <ul>
-                <li>Tracks can most often be bent back because they are a heavier gauge steel.  Most garage door companies won't tell you this because the want to make more money.</li>
-                <li>If they do replacement, it is usually the vertical track that is damaged.  We can cut out the damaged part and replace it with new raw track.</li>
-                <li>Hinges wear out almost as fast as rollers. As you go up on both sides of the door, each panel requires a different hinge (as measured by angle).  You be suprised how often we find the wrong hinges in the wrong places, not allowing panels to bend the way that they should.</li>
-            </ul>
-        </div>
-        <div class="image-box">
-            <img src="tracks.jpg" alt="Jackshaft opener repair near me">
-        </div>
-    </div>
- 
-    <!-- Chain Hoists -->
-    <div class="info-section">
-        <div class="info-box">
-            <h3>Chain Hoists</h3>
-            <p> Commercial garage doors are often used manually.  If the door is 14" or less this is fine.  But most people lift the door from one side or the other, instead of from the middle. This causes the came to slip and the door becomes stuck</p>
-            <ul>
-                <li><strong>Safety First.</strong> The best solution for this problem is to install a chain hoist.  This allows someone to move easily control the opening and closing of the door.</li>
-                <li>The chain hoist uses a pulley system that reduces the amount of effort needed to open and close the door.</li>
-                <li>Low Maintenance and Minimal Moving Parts: Chain hoists require less maintenance compared to motorized systems.</li>
-                <li>Locking Mechanism:
-                    Many chain hoists include a built-in locking mechanism to secure the door in place, enhancing security.</li>
-            </ul>
-        </div>
-        <div class="image-box">
-            <img src='hoist.jpg' alt="Chain hoist installation near me">
-        </div>
-    </div>
+  
 
 
 
-</section>
 
 
 
     <script>
-        // JavaScript for handling Learn More button clicks
-        function learnMore(type) {
-            alert(`Learn more about ${type}! Contact us to schedule your repair.`);
-        }
+        
     </script>
 </body>
 </html>

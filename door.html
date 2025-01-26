@@ -18,7 +18,21 @@
             background-color: #f4f4f4;
         }
 
-   
+        .sub-header-container, .image-container {
+            margin: 0; /* Remove container margins */
+            padding: 0; /* Remove container padding */
+        }
+
+        .garage-header {
+            margin: 0; /* Remove any header margin */
+            padding: 0; /* Remove header padding */
+            width: 100%; /* Ensure the header spans the full width */
+        }
+
+        .background-image {
+            margin: 0; /* Remove any margin on the image */
+            padding: 0; /* Remove any padding on the image */
+        }
 
         /* Hero Section */
         .hero-section {
@@ -269,22 +283,17 @@
         /* Hero Sectio Button*/
 
         .hero-btn {
-            display: block;
             width: 30%;
-            margin: 170px auto 0;
-            margin-top: 75px !important;
-            transform: translateY(75px) !important;
             padding: 12px 24px;
+            margin: 75px auto;
             background-color: #2563eb;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 24px !important; /* Increased font and added !important */
+            font-size: 24px;
             font-weight: bold;
             cursor: pointer;
-            position: relative;
             z-index: 1003;
-            transition: background-color 0.3s ease;
 }   
 
         .hero-btn:hover {
@@ -295,8 +304,8 @@
             display: none;
             position: absolute;
             right: 5%;
-            top: 0px; /* Changed from 50px to -150px (moved up 200px) */
-            height: 600px;
+            top: 400px; /* Changed from 50px to -150px (moved up 200px) */
+            height: 800px;
             z-index: 1001;
             width: 375px;
             background-color: #f9fafb;
@@ -588,83 +597,97 @@
 <body>
    
     <header class="garage-header">
-        <div class="garage-header__content-left">
-            <div class="garage-header__logo">
-                <a href="index.html">
-                <img src="logo_orange.png" alt="Company Logo" class="garage-header__logo-img"></a>
-            </div>
-            <div class="garage-header__social">
-                <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" target="_blank">
-                    <img src="yelp.png" alt="Yelp" class="garage-header__social-icon">
-                </a>
-                <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" target="_blank">
-                    <img src="tt.png" alt="Thumbtack" class="garage-header__social-icon">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61561423146575" target="_blank">
-                    <img src="2021_Facebook_icon.svg.png" alt="Angi" class="garage-header__social-icon">
-                </a>
-                <a href="https://www.homeadvisor.com/rated.ProLiftGarageDoorsof.124138330.html" target="_blank">
-                    <img src="al.png" alt="HomeAdvisor" class="garage-header__social-icon">
-                </a>
-            </div>
+        <div class="garage-header__logo">
+            <a href="index.html">
+                <img src="orange_logo.png" alt="Company Logo" class="garage-header__logo-img">
+            </a>
         </div>
-    
         <nav class="garage-header__nav">
-            <button class="garage-header__mobile-btn">
+            <button class="garage-header__mobile-btn" aria-label="Toggle navigation menu">
                 <span class="garage-header__mobile-btn-bar"></span>
                 <span class="garage-header__mobile-btn-bar"></span>
                 <span class="garage-header__mobile-btn-bar"></span>
             </button>
             <ul class="garage-header__nav-list">
-                <li class="garage-header__nav-item">
-                    <a href="#" class="garage-header__nav-link">Residential</a>
-                    <ul class="garage-header__dropdown">
-                        <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
-                        <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
-                        <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
-                        <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
-                        <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
-                    </ul>
-                </li>
-                <li class="garage-header__nav-item">
-                    <a href="#" class="garage-header__nav-link">Commercial</a>
-                    <ul class="garage-header__dropdown">
-                        <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
-                        <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
-                        <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
-                        <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
-                    </ul>
-                </li>
-                <li class="garage-header__nav-item">
-                    <a href="#" class="garage-header__nav-link">Areas Served</a>
-                    <ul class="garage-header__dropdown">
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Houston</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Katy</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Pearland</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Sugar Land</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
-                        <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
-                    </ul>
-                </li>
-                <li class="garage-header__nav-item">
-                    <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
-                    <ul class="garage-header__dropdown">
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
-                        <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
-                    </ul>
-                </li>
+                <!-- Social Icons -->
+                <div class="social-icons-group">
+                    <li class="garage-header__nav-item">
+                        <a href="https://www.yelp.com/biz/dupree-garage-doors-houston" class="garage-header__nav-link" target="_blank">
+                            <img src="yelp.png" alt="Yelp" class="nav-social-icon">
+                        </a>
+                    </li>
+                    <li class="garage-header__nav-item">
+                        <a href="https://www.facebook.com/profile.php?id=61561423146575" class="garage-header__nav-link" target="_blank">
+                            <img src="2021_Facebook_icon.svg.png" alt="Facebook" class="nav-social-icon">
+                        </a>
+                    </li>
+                    <li class="garage-header__nav-item">
+                        <a href="https://www.angi.com" class="garage-header__nav-link" target="_blank">
+                            <img src="al.png" alt="Angi" class="nav-social-icon">
+                        </a>
+                    </li>
+                    <li class="garage-header__nav-item">
+                        <a href="https://www.thumbtack.com/tx/houston/garage-door-repair/dupree-garage-doors/service/453154122070786060" class="garage-header__nav-link" target="_blank">
+                            <img src="tt.png" alt="Thumbtack" class="nav-social-icon">
+                        </a>
+                    </li>
+                </div>
+                
+                <!-- Navigation Items -->
+                <div class="nav-items-group">
+                    <li class="garage-header__nav-item">
+                        <a href="#" class="garage-header__nav-link">Residential</a>
+                        <ul class="garage-header__dropdown">
+                            <li class="garage-header__dropdown-item"><a href="Springs.html" class="garage-header__dropdown-link">Garage Door Springs</a></li>
+                            <li class="garage-header__dropdown-item"><a href="door.html" class="garage-header__dropdown-link">Garage Doors</a></li>
+                            <li class="garage-header__dropdown-item"><a href="Openers.html" class="garage-header__dropdown-link">Openers</a></li>
+                            <li class="garage-header__dropdown-item"><a href="QuietDoor.html" class="garage-header__dropdown-link">Quiet Door Upgrade</a></li>
+                            <li class="garage-header__dropdown-item"><a href="build_your_door.html" class="garage-header__dropdown-link">Design Your Garage Door</a></li>
+                        </ul>
+                    </li>
+                    <li class="garage-header__nav-item">
+                        <a href="#" class="garage-header__nav-link">Commercial</a>
+                        <ul class="garage-header__dropdown">
+                            <li class="garage-header__dropdown-item"><a href="new_repair.html" class="garage-header__dropdown-link">Commercial Garage Door Repair</a></li>
+                            <li class="garage-header__dropdown-item"><a href="new_install.html" class="garage-header__dropdown-link">Commercial Door Installs</a></li>
+                            <li class="garage-header__dropdown-item"><a href="repairs.html" class="garage-header__dropdown-link">Hollow Metal Door</a></li>
+                            <li class="garage-header__dropdown-item"><a href="storefront.html" class="garage-header__dropdown-link">Storefront</a></li>
+                        </ul>
+                    </li>
+                    <li class="garage-header__nav-item">
+                        <a href="#" class="garage-header__nav-link">Areas Served</a>
+                        <ul class="garage-header__dropdown">
+                            <li class="garage-header__dropdown-item"><a href="houston.html" class="garage-header__dropdown-link">Houston</a></li>
+                            <li class="garage-header__dropdown-item"><a href="katy.html" class="garage-header__dropdown-link">Katy</a></li>
+                            <li class="garage-header__dropdown-item"><a href="pearland.html" class="garage-header__dropdown-link">Pearland</a></li>
+                            <li class="garage-header__dropdown-item"><a href="sugar.html" class="garage-header__dropdown-link">Sugar Land</a></li>
+                            <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Bellaire</a></li>
+                            <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cypress</a></li>
+                            <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Cinco Ranch</a></li>
+                            <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Missouri City</a></li>
+                            <li class="garage-header__dropdown-item"><a href="#" class="garage-header__dropdown-link">Memorial</a></li>
+                        </ul>
+                    </li>
+                    <li class="garage-header__nav-item">
+                        <a href="FAQs.html" class="garage-header__nav-link">FAQs</a>
+                        <ul class="garage-header__dropdown">
+                            <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Should I DIY Broken Springs</a></li>
+                            <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How do I Maintain My Garage Door</a></li>
+                            <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Expected Life Of Garage Door Opener</a></li>
+                            <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">Why is My Garage Door So Heavy</a></li>
+                            <li class="garage-header__dropdown-item"><a href="FAQs.html" class="garage-header__dropdown-link">How Can I Make My Garage Door Quieter</a></li>
+                        </ul>
+                    </li>
+                </div>
+     
+                <!-- Phone -->
                 <li class="garage-header__nav-item garage-header__phone">
-                    <a href="tel: 281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
+                    <a href="tel:281-924-7000" class="garage-header__nav-link garage-header__phone-btn">281-924-7000</a>
                 </li>
             </ul>
         </nav>
-    </header>
+        <div class="overlay"></div>
+     </header>
 
 
 
