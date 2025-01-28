@@ -11,6 +11,11 @@
         body {
             margin: -20px; /* Remove default browser margin */
             padding: 0; /* Remove default browser padding */
+            overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
         }
 
         .sub-header-container, .image-container {
@@ -169,6 +174,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 80px;
+            z-index: 10000;
         }
 
             .unique-form-group {
@@ -222,6 +228,30 @@
 
 
         /* Responsive Design */
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 50vh;
+            }
+            
+            .garage-type {
+                width: 100%; /* Stack cards on smaller screens */
+            }
+
+            .image-grid-a,
+            .image-grid-b,
+            .image-grid-c {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .image-grid-a img,
+            .image-grid-b img,
+            .image-grid-c img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
         @media (max-width: 768px) {
             .model-grid {
                 grid-template-columns: 1fr;
@@ -250,7 +280,18 @@
    margin-top: 50px;
  }
         }
+        .garage-opener-content ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
 
+.garage-opener-content li::before {
+    content: "•";
+    color: #ff6b00;
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+}
 
     
 
@@ -258,6 +299,8 @@
 .garage-opener-content {
     position: relative;
     margin-top: 0;
+    margin-left: 60px;
+    margin-right: 60px;
     background: white;
     padding: 2rem;
 }
@@ -274,10 +317,6 @@
     padding-bottom: 0.5rem;
 }
 
-.garage-opener-content ul {
-    list-style: none;
-    padding-left: 1.5rem;
-}
 
 .garage-opener-content li {
     margin-bottom: 1.5rem;
@@ -400,7 +439,7 @@
 
 <div class="unique-booking-form-section" id="uniqueBookingForm" style="display: none;">
     <div class="unique-form-container">
-        <h2>Reach Out To Us</h2>
+        <h3>Reach Out To Us</h3>
         <p>Please fill out the form below and we'll get back to you shortly.</p>
         <form action="https://formsubmit.co/9c6d03d4efd5d84efeaff8e429d4d5e5" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_subject" value="New Commercial Door Service Request">

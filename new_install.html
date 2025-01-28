@@ -49,11 +49,7 @@
 }
 
 .partial-overlay h2 {
-    background: linear-gradient(to right, white, #ffa500);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: white;
 }
 
 
@@ -95,7 +91,7 @@
 .partial-overlay ul {
     margin: 0;
     padding: 0;
-    line-height: 1;
+    line-height: 1.2;
     list-style: none;
 }
 
@@ -103,7 +99,7 @@
     margin: 0;
     padding-left: 2rem;
     font-size: 1.8rem;
-    line-height: 1;
+    line-height: 1.2;
 
 }
 
@@ -140,6 +136,16 @@
 
 @media (max-width: 1093px) {
 
+    .text-content,
+    .image-section {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .content-section {
+        display: block;
+    }
+
 h1 {font-size: 30px !important};
 
 
@@ -156,16 +162,44 @@ h2 {
    
     font-size: 0.9rem !important;
     width: 25%;
-
-     ;
-
-
     }
-
 
 }
 
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .partial-overlay {
+        padding: 1rem;
+    }
+    
+    .partial-overlay ul {
+        line-height: 1.4;
+    }
+    
+    .partial-overlay li h2 {
+        font-size: 1.4rem !important;
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
 
+    h1 {
+        font-size: 24px !important;
+        
+    }
+
+    .unique-toggle-btn {
+    top: 75% !important;
+    left: 0 !important;
+    transform: translate(50%, 50%) !important;
+   
+    font-size: 0.9rem !important;
+    width: 50%;
+    }
+
+
+
+
+}
 
 /* Content Section Styles */
 .houston-overview {
@@ -615,7 +649,7 @@ h2 {
                  <li><h2>Sectional</h2></li>
                  <li><h2>Rolling Steel</h2></li>
                  <li><h2>Rollups</h2></li>
-                 <li><h2>Jackshaft / Gearhead Openers</h2></li>
+                 <li><h2>Jackshafts</h2></li>
                 </ul>
              </div>
              <button onclick="navigateToBooking()" class="unique-toggle-btn">CONTACT US</button>

@@ -49,11 +49,8 @@
 }
 
 .partial-overlay h2 {
-    background: linear-gradient(to right, white, #ffa500);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    
+    color: white;
 }
 
 
@@ -115,8 +112,9 @@
 
 .unique-toggle-btn {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 60%;
+    left: 30%;
+    transform: translate(50%, 50%) !important;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     border: 2px solid black; /* 2px black border */
     border-radius: 5px; /* Rounded corners */
@@ -140,30 +138,80 @@
 
 @media (max-width: 1093px) {
 
-h1 {font-size: 30px !important};
+h1 {font-size: 30px !important;
+    color: white !important;
+}
+
+
 
 
 h2 {
-    font-size: 24px !important;
+    font-size: 20px !important;
    }
 }
 
 @media (max-width: 786px) {
+
+.header-group {
+    text-align: left;
+}
+
 .unique-toggle-btn {
-    top: 50% !important;
-    left: 65% !important;
-    transform: translate(0%, 50%) !important;
+    top: 60% !important;
+    left: 25% !important;
+    transform: translate(50%, 50%) !important;
    
     font-size: 0.9rem !important;
-    width: 25%;
+    width: 25%;;
+}
+}
 
-     ;
+@media (max-width: 480px) {
+    
+    .header-group {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 0.5rem;
+        text-align: left;
+        display: inline-block;
+        padding-right: 2rem;  /* Added more padding on right */
+        margin-right: 1rem;   /* Added margin on right */
+    }
+           
+    h1 {
+        font-size: 27px !important;
+        margin: 0;
+    }
+    
+    h2 {
+       margin: 0;
+    }
 
+    .unique-toggle-btn {
+    top: 65% !important;
+    left: 1% !important;
+    transform: translate(50%, 50%) !important;
+    font-size: 1.2rem !important;
+    width: 50%;
+    }
+
+    .unique-toggle-btn:hover {
+    background-color: #ffa500 !important;
 
     }
 
-
+    .partial-overlay {
+        background-color: rgba(0, 0, 0, 0.4);  /* Dark semi-transparent background */
+        padding: 1rem;  /* Some padding around the text */
+        
+    }
+   
 }
+
+
+    
+
+
+
 
 
 
@@ -329,6 +377,15 @@ h2 {
 
 @media (max-width: 1024px) {
 
+    .text-content,
+    .image-section {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .content-section {
+        display: block;
+    }
     
    
 }
@@ -338,6 +395,7 @@ h2 {
     .heading-title {
         font-size: 2.5rem;
         padding: 0 1rem;
+        text-align: left !important;
     }
 
     .image-container {
@@ -366,9 +424,7 @@ h2 {
     }
 }
 
-@media (max-width: 480px) {
-    
-}
+
 
 /* Photo CSS */
 
@@ -628,7 +684,7 @@ h2 {
              <div class="partial-overlay">
                <h1 class="heading-title">Hollow Metal Doors</h1>
                <ul>
-                 <li><h2>Professional-grade security<br> and durability for your commercial facility</h2></li>
+                <h2>Professional-grade security and durability for your commercial facility</h2>
                 
              </ul>
              </div>

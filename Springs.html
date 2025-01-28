@@ -17,6 +17,18 @@ body {
            
         }
 
+        html, body {
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
+    position: relative;  /* Create positioning context */
+    width: 100%;
+}
+
+.springs-content-section {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
         
 
         .sub-header-container, .image-container {
@@ -115,7 +127,7 @@ new-overlay {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1001;
+    z-index: 10000;
 }
 
 
@@ -316,25 +328,50 @@ new-overlay {
     margin-bottom: 1.5rem;
 }
 
+.springs-content-section {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    overflow-x: hidden;      /* Add this */
+    position: relative;      /* Add this */
+    width: 100%;            /* Add this */
+    box-sizing: border-box;  /* Add this */
+}
 
 @media screen and (max-width: 1093px) {
    .springs-section-with-image {
        flex-direction: column;
-       padding: 0 10%;
+       padding: 0 5%;
        gap: 10px;
+       margin: 0 auto;
+       width: 90%;
    }
    
+     
+   .springs-image-content {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        order: 2;
+        margin: 20px 0;
+   }
+
    .springs-text-content {
        order: 1;
+       padding: 0;    /* Reset padding */
+       width: 100%;   /* Full width */
    }
-   
-   .springs-image-content {
-    display: block;
-    margin: 0 auto;
-       order: 2;
-   }
-}
 
+   .springs-image-content img {
+        margin: 0 auto;
+        display: block;
+        width: 100%;    /* Add this to maintain image size */
+        max-width: 500px; /* Add this to prevent images from getting too large */
+        padding: 0 15px;
+        
+}
+}
 
 @media screen and (max-width: 768px) {
     .heading-title {
@@ -359,6 +396,7 @@ new-overlay {
     .springs-image-content {
         margin: 5px 0;
     }
+}
 
     </style>
 
@@ -513,7 +551,7 @@ new-overlay {
 <div class="springs-content-section">
     <div class="springs-section-with-image">
         <div class="springs-text-content">
-            <h2>Garage Door Spring Overview</h2>
+            <h1>Garage Door Spring Overview</h1>
             <ul>
                 <li>Garage door springs are what lifts your door up. As your door comes down, the springs twist and store energy. When a spring is intact and balanced correctly, the door is easy to lift up. When the spring is broken, the door is really heavy and difficult to lift, trapping you and/or your car in the garage.</li>
                 <li>Torsion Spring (pictured in the header) is in 90% of houses and virtually all new construction. Located above the garage door, mounted on a horizontal metal shaft, operates by twisting and storing energy when the door is closed, and release the stored energy to assist in lifting the door when it opens</li>

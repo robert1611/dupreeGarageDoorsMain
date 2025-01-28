@@ -306,7 +306,7 @@
             right: 5%;
             top: 400px; /* Changed from 50px to -150px (moved up 200px) */
             height: 800px;
-            z-index: 1001;
+            z-index: 10000;
             width: 375px;
             background-color: #f9fafb;
             padding: 1.5rem;
@@ -540,11 +540,37 @@
                 height: 50vh;
             }
             
+            .garage-type {
+                width: 100%; /* Stack cards on smaller screens */
+            }
+
+            .image-grid-a,
+            .image-grid-b,
+            .image-grid-c {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .image-grid-a img,
+            .image-grid-b img,
+            .image-grid-c img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 50vh;
+            }
+            
             
             .garage-type {
                 width: 100%; /* Stack cards on smaller screens */
             }
         }
+
+    
 
         /* Responsive Design */
         @media (max-width: 768px) {

@@ -49,11 +49,7 @@
 }
 
 .partial-overlay h2 {
-    background: linear-gradient(to right, white, #ffa500);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color:white
 }
 
 
@@ -333,8 +329,72 @@ h2 {
    
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    /* Content Layout */
+
+    .text-content,
+    .image-section {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .content-section {
+        display: block;
+    }
+
+
+    .houston-overview {
+        width: 100%;
+        padding: 0 2rem;
+        margin: 2rem auto;
+    }
+    
+    .content-section {
+        flex-direction: column;
+        margin-bottom: 3rem;
+        gap: 2rem;
+    }
+    
+    .text-content {
+        width: 100% !important;
+        padding: 0;
+    }
+    
+    .image-section {
+        width: 100% !important;
+        margin-top: 0;
+        max-height: none;
+    }
+    
+    .section-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    /* Text Styling */
+    .houston-overview h4 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .houston-overview p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .houston-overview li {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .houston-overview li p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Hero Section */
     .heading-title {
         font-size: 2.5rem;
         padding: 0 1rem;
@@ -344,22 +404,7 @@ h2 {
         height: 400px;
     }
 
-    .houston-overview {
-        padding: 0 1rem;
-    }
-
-    .houston-overview h2 {
-        font-size: 1.5rem;
-    }
-
-    .houston-overview h4 {
-        font-size: 1.8rem;
-    }
-
-    .houston-overview li p {
-        font-size: 1rem;
-    }
-
+    /* Form Section */
     .unique-booking-form-section {
         margin: 2rem 1rem;
         padding: 1.5rem;
@@ -368,6 +413,13 @@ h2 {
 
 @media (max-width: 480px) {
     
+    .unique-toggle-btn {
+        width: 60%; /* Even wider */
+        padding: 25px 35px; /* Even taller */
+        font-size: 3rem !important;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* Photo CSS */
@@ -394,7 +446,7 @@ h2 {
 .image-section {
     width: 37.5%;
     max-height: 450px;  /* Control maximum height */
-    margin-top: 100px;
+    margin-top: 60px;
     
 }
 
@@ -441,26 +493,6 @@ h2 {
     line-height: 1.6;
 }
 
-@media (max-width: 968px) {
-    .content-section {
-        flex-direction: column;
-        margin-bottom: 2rem;
-    }
-    
-    .text-content {
-        width: 100%;
-        
-    }
-    
-    .image-section {
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .section-image {
-        height: 300px; /* Slightly reduced height for mobile */
-    }
-}
 
 
 </style>
