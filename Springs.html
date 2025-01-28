@@ -12,8 +12,9 @@
 
 body {
             font-family: 'Roboto', sans-serif;
-            margin: -50px;
+            margin:  0;
             padding: 0;
+            margin-top: -20px;
            
         }
 
@@ -395,6 +396,16 @@ new-overlay {
     
     .springs-image-content {
         margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-container {
+        height: 300px;  /* Reduced from 500px */
+    }
+    
+    .unique-toggle-btn {
+        top: 65%;  /* Adjust button position for smaller image */
     }
 }
 

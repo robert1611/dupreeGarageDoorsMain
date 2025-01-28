@@ -169,15 +169,62 @@
         @media screen and (max-width: 1093px) {
         .section-with-image {
             flex-direction: column;
+            width: 100%;
+            padding: 0;
         }
         .text-content {
-            width: 100%;
+            width: 90%;
+            padding: 0;
+            margin: 0 auto;
         }
         .unique-toggle-btn {
-                        width: 30% !important;
-                    }
-                }
+            width: 30% !important;
+        }
+
+        .section-with-image {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+            }
             
+            .text-content {
+                width: 100%;
+                padding: 0 20px;  /* Add padding for spacing */
+            }
+            
+            .spring-header {
+                width: 100%;
+                margin-bottom: 20px; /* Add space between header and content */
+            }
+            
+            .content-section {
+                width: 100%;
+                padding: 20px;  /* Uniform padding */
+            }
+
+            .pricing-table {
+        margin: 20px auto;  /* Center the table */
+        width: 90%;        /* Match text width */
+        max-width: none;   /* Remove max-width restriction */
+    }
+    
+    /* Center pricing notes */
+    .pricing-notes {
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    /* Center the pricing header */
+    .service-pricing-header {
+        text-align: center;
+        width: 90%;
+        margin: 20px auto;
+    }
+                        }
+            
+
+
+
 
         @media screen and (max-width: 768px) {
             .spring-header {
@@ -250,7 +297,16 @@
                 justify-content: center;
                 line-height: 1;
             }
+        
+
+            .overlay-text h1 {
+            font-size: 1.8rem !important;
         }
+        
+        .text-content h2 {
+            font-size: 1.1rem !important;
+        }
+        
 
 
         .form-overlay {
@@ -309,6 +365,14 @@
     border-radius: 5px;
     cursor: pointer;
 }
+        }
+
+    @media screen and (max-width: 480px){
+        .service-pricing-header {
+            font-size: 1.1rem !important;
+        }
+    }
+
 
     </style>
 </head>
@@ -438,7 +502,7 @@
                 </div>
                 <div class="unique-form-group">
                     <label for="unique-photo">Upload Photo (optional)</label>
-                    <input type="file" id="unique-photo" name="attachment" accept="image/*" multiple>
+                    <input type="file" id="unique-photo" name="attachment" accept="image" multiple>
                     <small>You can select multiple photos if needed</small>
                 </div>
                 <button type="submit" class="unique-submit-btn">Contact Us</button>
