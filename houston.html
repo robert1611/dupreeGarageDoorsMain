@@ -12,8 +12,9 @@
 
 
 body {
-    margin: -20px; /* Remove default browser margin */
+    margin: 0; /* Remove default browser margin */
     padding: 0; /* Remove default browser padding */
+    margin-top: -20px;
 }
 
 
@@ -306,76 +307,6 @@ body {
 }
 
 
-
-
-@media (max-width: 1024px) {
-
-    .garage-header__mobile-btn {
-        display: block;
-        right: 2rem;
-        top: 1.5rem;
-    }
-
-    .garage-header__nav {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .garage-header__nav-list {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 1rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-    }
-
-    .garage-header__nav-list.active {
-        display: flex;
-    }
-
-    .garage-header__nav-item {
-        width: 100%;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid #eee;
-    }
-    .garage-header__nav-item:last-child {
-        border-bottom: none;
-    }
-
-    .garage-header__dropdown {
-        position: static;
-        box-shadow: none;
-        width: 100%;
-        padding-left: 1rem;
-        background: #f9f9f9;
-        margin-top: 0.5rem;
-    }
-
-    .garage-header__dropdown-item {
-        padding: 0.5rem 0;
-    }
-
-    .garage-header__nav-item:hover .garage-header__dropdown {
-        display: block;
-    }
-
-    .garage-header__phone {
-        margin-top: 1rem;
-    }
-
-    .garage-header__phone-btn {
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-    }
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .heading-title {
@@ -409,36 +340,6 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .garage-header {
-        padding: 0.5rem;
-        position: relative;
-    }
-    
-    .garage-header__logo-img {
-        height: 40px;  /* Make logo smaller on mobile */
-    }
-    
-    .garage-header__mobile-btn {
-        padding: 5px;
-        right: 1rem;  /* Adjust right position */
-        top: 1.5rem;    /* Position from top */
-        transform: none;
-        position: absolute;
-    }
-
-    .garage-header__social-icon {
-       height: 20px;
-       width: 20px;
-    }
-
-    .garage-header__mobile-btn-bar {
-        width: 20px;  /* Make hamburger bars slightly smaller */
-        height: 2px;
-        margin: 4px 0;
-        
-    }
-}
 
     </style>
 
@@ -537,7 +438,7 @@ body {
                     </li>
                 </ul>
             </nav>
-            <div class="overlay"></div>
+            
          </header>
 
 <div class="overlay"></div>

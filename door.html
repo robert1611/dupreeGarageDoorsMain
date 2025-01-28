@@ -78,7 +78,7 @@
 
         /* Section Below Hero */
         .section {
-            padding: 60px 20px;
+            padding: 0 20px;
             background-color: white;
             margin-top: -20px; /* Overlap the hero section slightly for aesthetics */
         }
@@ -603,31 +603,47 @@
                 height: auto;
             }   
 
-          
-                      
-        }
-
-        @media (max-width: 480px) {
-            .image-grid {
-                grid-template-columns: 1fr; /* 1 column on very small screens */
-    }
-            .hero-btn {
-                width: 100% !important;
-            }
-          
-            .image-container {
-                height: 300px;  /* Reduced from 500px */
+             h2 {
+                font-size: 2rem !important;  /* Increased from current size */
             }
             
-            .unique-toggle-btn {
-                top: 65%;  /* Adjust button position for smaller image */
+            .garage-types h2,
+            .section-types h2,
+            .quality-section h2 {
+                font-size: 1.4rem !important;
             }
-}
+
+            .garage-type p {
+                font-size: 1.2rem;  /* Increase card paragraph text size */
+                padding: 0 15px;
+                margin-bottom: 15px;
+                color: #555;
+            }
+
+            .hero-section .hero-content p {
+                font-size: 0.9rem !important;
+                margin-bottom: 0 !important;
+                line-height: 1.4 !important;
+    }
+        }
+
+ 
+
 
 
         
 
+        .hero-section .hero-content .hero-btn {
+        width: 60% !important;
+        margin-top: -100px !important;
+        font-size: 16px !important;
+       
+    }
 
+    .hero-section .hero-content h1 {
+        margin-top: -140px !important;
+        font-size: 18px !important;
+    }
         
     </style>
 </head>
@@ -771,7 +787,7 @@
                 </div>
                 <div class="form-group">
                     <label for="photo">Upload Photo (optional)</label>
-                    <input type="file" id="photo" name="attachment" accept="image/*" multiple>
+                    <input type="file" id="photo" name="attachment" accept="image" multiple>
                     <small>You can select multiple photos if needed</small>
                 </div>
                 <button type="submit" class="submit-btn">Contact Us</button>
@@ -809,7 +825,7 @@
 
     <!-- Modal for Gallery -->
     <div id="modal" class="modal">
-        <div class="modal-content">
+        <di+v class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
             <h3 id="modal-title">Gallery</h3>
             <div class="photo-grid" id="modal-images">
