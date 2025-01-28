@@ -11,16 +11,20 @@
     <style>
 
 
-body {
-    margin: 0; /* Remove default browser margin */
-    padding: 0; /* Remove default browser padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
         /* Hero Section Styles */
 .sub-header-container {
     position: relative;
-    margin-top: 80px;
+    
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
@@ -47,7 +51,16 @@ body {
 
 }
 
-
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 1002;
+}
 
 .booking-form-section {
     display: none;
@@ -61,8 +74,10 @@ body {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1001;
+    z-index: 99999;
 }
+
+
 
 /* Mobile Menu Button Styles */
 
