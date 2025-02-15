@@ -80,7 +80,8 @@ function loadGoogleMaps() {
         return;
     }
 
-    function initMap() {
+    window.initMap = function() {
+        // Your map initialization code here
         const map = new google.maps.Map(document.getElementById("service-area-map"), {
             center: { lat: 29.7381, lng: -95.425 },
             zoom: 9.5,
