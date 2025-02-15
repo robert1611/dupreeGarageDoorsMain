@@ -438,12 +438,11 @@ body {
 
 
 <script src="config.js"></script>
+<script src="script.js"></script>
 <script>
-    const mapScript = document.createElement('script');
-    mapScript.src = `https://maps.googleapis.com/maps/api/js?key=${config.GOOGLE_MAPS_API_KEY}&callback=initMap`;
-    mapScript.async = true;
-    mapScript.defer = true;
-    document.head.appendChild(mapScript);
+    document.addEventListener('DOMContentLoaded', function() {
+        loadGoogleMaps();
+    });
 </script>
 
 
