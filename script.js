@@ -266,29 +266,19 @@ function insertFooter() {
     footerPlaceholder.innerHTML = footerHTML;
 }
 
-// Flag to prevent double initialization
+// Navigation Initialization
 let isInitialized = false;
-
 function initializeNavigation() {
-    if (isInitialized) {
-        return;
-    }
+    if (isInitialized) return;
 
     let mobileBtn = document.querySelector('.garage-header__mobile-btn');
     const navList = document.querySelector('.garage-header__nav-list');
     
-    console.log('Mobile button found:', mobileBtn);
-    console.log('Nav list found:', navList);
-
     if (mobileBtn && navList) {
-        // Reset the display style based on window width
         navList.style.display = window.innerWidth <= 1094 ? 'none' : 'flex';
         
         mobileBtn.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent any default button behavior
-            console.log('Button clicked');
-            
-            // Toggle display and update button state
+            e.preventDefault();
             if (navList.style.display === 'none' || !navList.style.display) {
                 navList.style.display = 'flex';
                 mobileBtn.classList.add('active');
@@ -297,25 +287,25 @@ function initializeNavigation() {
                 mobileBtn.classList.remove('active');
             }
         });
-
-        // Handle window resize
+        
         window.addEventListener('resize', function() {
             navList.style.display = window.innerWidth <= 1200 ? 'none' : 'flex';
         });
-
+        
         isInitialized = true;
     }
 }
 
-// Single initialization point
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         initializeNavigation();
         insertFooter();
+        loadGoogleMaps();
     });
 } else {
     initializeNavigation();
     insertFooter();
+    loadGoogleMaps();
 }
 
 // Keep Maps separate
