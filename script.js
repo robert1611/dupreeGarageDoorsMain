@@ -1,3 +1,24 @@
+// Fetch API key from backend and load Google Maps
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('/api/get-key')
+        .then(response => response.json())
+        .then(data => {
+            if (!data.GOOGLE_MAPS_API_KEY) {
+                console.error("Google Maps API key is missing.");
+                return;
+            }
+
+            console.log("Google Maps API Key Loaded:", data.GOOGLE_MAPS_API_KEY);
+
+            const script = document.createElement("script");
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${data.GOOGLE_MAPS_API_KEY}&callback=initMap`;
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+        })
+        .catch(error => console.error("Error fetching API key:", error));
+});
+
 // Booking Functions
 function navigateToBooking() {
     const bookingSection = document.querySelector('.booking-form-section');
@@ -75,127 +96,36 @@ function handleServiceSubmit(event) {
 
 // Google Maps Initialization
 function loadGoogleMaps() {
-    if (typeof google === 'undefined') {
-        setTimeout(loadGoogleMaps, 100);
+    if (typeof google === 'undefined' || !google.maps) {
+        console.error("Google Maps API is not loaded. Retrying...");
+        setTimeout(loadGoogleMaps, 500);
         return;
     }
 
+    console.log("Google Maps API Loaded. Initializing Map...");
+
     window.initMap = function() {
-        // Your map initialization code here
-        const map = new google.maps.Map(document.getElementById("service-area-map"), {
+        const mapElement = document.getElementById("service-area-map");
+
+        if (!mapElement) {
+            console.error("Map container not found!");
+            return;
+        }
+
+        const map = new google.maps.Map(mapElement, {
             center: { lat: 29.7381, lng: -95.425 },
             zoom: 9.5,
         });
 
-        const zipCodeData = [
-            {
-                zip: "77092",
-                coords: [
-                    { lat: 29.8501, lng: -95.4875 },
-                    { lat: 29.8501, lng: -95.4475 },
-                    { lat: 29.8101, lng: -95.4475 },
-                    { lat: 29.8101, lng: -95.4875 },
-                    { lat: 29.8501, lng: -95.4875 },
-                ],
-            },
-            {
-                zip: "77008",
-                coords: [
-                    { lat: 29.8101, lng: -95.4225 },
-                    { lat: 29.8101, lng: -95.3825 },
-                    { lat: 29.7701, lng: -95.3825 },
-                    { lat: 29.7701, lng: -95.4225 },
-                    { lat: 29.8101, lng: -95.4225 },
-                ],
-            },
-            {
-                zip: "77018",
-                coords: [
-                    { lat: 29.8466, lng: -95.4456 },
-                    { lat: 29.8466, lng: -95.4056 },
-                    { lat: 29.8066, lng: -95.4056 },
-                    { lat: 29.8066, lng: -95.4456 },
-                    { lat: 29.8466, lng: -95.4456 },
-                ],
-            },
-            {
-                zip: "77005",
-                coords: [
-                    { lat: 29.7165, lng: -95.4300 },
-                    { lat: 29.7165, lng: -95.4000 },
-                    { lat: 29.6865, lng: -95.4000 },
-                    { lat: 29.6865, lng: -95.4300 },
-                    { lat: 29.7165, lng: -95.4300 },
-                ],
-            },
-            {
-                zip: "77006",
-                coords: [
-                    { lat: 29.7520, lng: -95.4000 },
-                    { lat: 29.7520, lng: -95.3700 },
-                    { lat: 29.7220, lng: -95.3700 },
-                    { lat: 29.7220, lng: -95.4000 },
-                    { lat: 29.7520, lng: -95.4000 },
-                ],
-            },
-            {
-                zip: "77007",
-                coords: [
-                    { lat: 29.7700, lng: -95.4200 },
-                    { lat: 29.7700, lng: -95.3800 },
-                    { lat: 29.7400, lng: -95.3800 },
-                    { lat: 29.7400, lng: -95.4200 },
-                    { lat: 29.7700, lng: -95.4200 },
-                ],
-            },
-            {
-                zip: "77009",
-                coords: [
-                    { lat: 29.7900, lng: -95.3700 },
-                    { lat: 29.7900, lng: -95.3300 },
-                    { lat: 29.7600, lng: -95.3300 },
-                    { lat: 29.7600, lng: -95.3700 },
-                    { lat: 29.7900, lng: -95.3700 },
-                ],
-            },
-            {
-                zip: "77581",
-                coords: [
-                    { lat: 29.6000, lng: -95.3000 },
-                    { lat: 29.6000, lng: -95.2600 },
-                    { lat: 29.5600, lng: -95.2600 },
-                    { lat: 29.5600, lng: -95.3000 },
-                    { lat: 29.6000, lng: -95.3000 },
-                ],
-            },
-            {
-                zip: "77584",
-                coords: [
-                    { lat: 29.5800, lng: -95.3800 },
-                    { lat: 29.5800, lng: -95.3400 },
-                    { lat: 29.5400, lng: -95.3400 },
-                    { lat: 29.5400, lng: -95.3800 },
-                    { lat: 29.5800, lng: -95.3800 },
-                ],
-            },
-        ];
-
-        zipCodeData.forEach((zip) => {
-            const polygon = new google.maps.Polygon({
-                paths: zip.coords,
-                strokeColor: "#000000",
-                strokeOpacity: 0,
-                strokeWeight: 0,
-                fillColor: "#FFA500",
-                fillOpacity: 0.35,
-            });
-            polygon.setMap(map);
-        });
-    }
+        console.log("Map initialized successfully.");
+    };
 
     initMap();
 }
 
+window.addEventListener('load', loadGoogleMaps);
+
+// Footer Insertion
 function insertFooter() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (!footerPlaceholder) return;
@@ -229,8 +159,7 @@ function insertFooter() {
                         <li><a href="./storefront.html">Storefront</a></li>
                     </ul>
                 </div>
-
-                 <div class="footer-section">
+                <div class="footer-section">
                     <h4>Areas Served</h4>
                     <ul>
                         <li><a href="./houston.html">Houston</a></li>
@@ -239,17 +168,14 @@ function insertFooter() {
                         <li><a href="./pearland.html">Pearland</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="./warranty.html">Warranty</a></li>
                         <li><a href="./new_repairs.html">Emergency Services</a></li>
-                        <li><a href="./FAQs.html">Emergency Service</a></li>
-                       
+                        <li><a href="./FAQs.html">FAQs</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-section">
                     <h4>Contact Us</h4>
                     <p>281-924-7000</p>
@@ -308,5 +234,4 @@ if (document.readyState === 'loading') {
     loadGoogleMaps();
 }
 
-// Keep Maps separate
 window.addEventListener('load', loadGoogleMaps);
